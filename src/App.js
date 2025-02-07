@@ -630,6 +630,83 @@ const renderPublications = () => {
   );
 };
 
+const renderPositions = () => (
+  <div className="space-y-6">
+    <Card>
+      <CardHeader>
+        <CardTitle>Faculty Positions</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-gray-600 mb-4">
+          We welcome applications for faculty positions in High Energy Physics and related areas.
+          Faculty positions are advertised through the IIT Delhi recruitment portal.
+        </p>
+        <a 
+          href="https://home.iitd.ac.in/jobs-iitd/index.php"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Apply for Faculty Positions
+        </a>
+      </CardContent>
+    </Card>
+
+    <Card>
+      <CardHeader>
+        <CardTitle>Postdoctoral Positions</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-gray-600 mb-4">
+          IIT Delhi offers institute postdoctoral fellowships. These positions are regularly advertised
+          through the IIT Delhi recruitment portal.
+        </p>
+        <a 
+          href="https://home.iitd.ac.in/jobs-iitd/index.php"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Apply for Postdoc Positions
+        </a>
+      </CardContent>
+    </Card>
+
+    <Card>
+      <CardHeader>
+        <CardTitle>PhD Positions</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-gray-600 mb-4">
+          We are looking for motivated students to join our PhD program. Applications are processed through
+          the IIT Delhi PhD admissions portal. We accept students through various fellowship schemes including
+          CSIR, UGC, INSPIRE, and institute fellowships.
+        </p>
+        <a 
+          href="https://ecampus.iitd.ac.in/PGADM/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Apply for PhD Program
+        </a>
+      </CardContent>
+    </Card>
+
+    <Card>
+      <CardHeader>
+        <CardTitle>Masters and BTech Students</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-gray-600">
+          Current Masters and BTech students at IIT Delhi who are interested in research projects
+          in High Energy Physics are encouraged to directly contact relevant faculty members.
+          Please review the faculty profiles and their research areas before reaching out.
+        </p>
+      </CardContent>
+    </Card>
+  </div>
+);
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -671,6 +748,12 @@ const renderPublications = () => {
         >
           Publications
         </button>
+        <button 
+          className={`px-4 py-2 rounded ${activeTab === 'positions' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveTab('positions')}
+        >
+          Positions
+        </button>            
       </div>
 
       <div className="space-y-6">
@@ -679,6 +762,7 @@ const renderPublications = () => {
         {activeTab === 'members' && renderMembers()}
         {activeTab === 'seminars' && renderSeminars()}
         {activeTab === 'publications' && renderPublications()}
+        {activeTab === 'positions' && renderPositions()}
       </div>
     </div>
   );
