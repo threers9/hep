@@ -592,7 +592,7 @@ const renderPublications = () => {
 
       <Card>
         <CardHeader>
-          <CardTitle>Publications</CardTitle>
+          <CardTitle>Recent Publications of the Group</CardTitle>
         </CardHeader>
         <CardContent>
           {currentPublications.map(pub => (
