@@ -113,7 +113,7 @@ const ResearchGroup = () => {
       website: "https://web.iitd.ac.in/~tphyspg/",
       description: "Research in Supersymmetric Models, R-parity violation, Neutrino physics, Electroweak Phase Transition and Gravitational Waves, Collider, Dark Matter, Charged Lepton Flavour Violation",
       lastName: "Ghosh",
-      arxivName: "Ghosh_P"
+      arxivName: "Ghosh_Pradipta"
     },
     {
       name: "Prof. Abhishek M. Iyer",
@@ -121,7 +121,7 @@ const ResearchGroup = () => {
       website: "https://inspirehep.net/authors/1272471",
       description: "Research in QCD/Composite dynamics, Physics of Kaons and ML for particle physics and beyond.",
       lastName: "Iyer",
-      arxivName: "Iyer_A"
+      arxivName: "Iyer_A_M"
     },
     {
       name: "Prof. Amruta Mishra",
@@ -129,7 +129,7 @@ const ResearchGroup = () => {
       website: "https://web.iitd.ac.in/~amruta/",
       description: "Research focuses on medium modifications of hadron properties at high temperatures and densities, relevant to neutron star phenomenology and heavy ion collision experiments.",
       lastName: "Mishra",
-      arxivName: "Mishra_A"
+      arxivName: "Mishra_Amruta"
     },
     {
       name: "Prof. Sarthak Parikh",
@@ -145,7 +145,7 @@ const ResearchGroup = () => {
       website: "https://inspirehep.net/authors/1077841",
       description: "Research in Chern Simons theories & Anyonic statistics, AdS-CFT, Higher Spin gauge theories, Fluid dynamics & gravity, Supersymmetry, String theory.",
       lastName: "Sharma",
-      arxivName: "Sharma_T"
+      arxivName: "Sharma_Tarun"
     },
     {
       name: "Prof. Suprit Singh",
@@ -153,7 +153,7 @@ const ResearchGroup = () => {
       website: "https://supritsinghlab.github.io/",
       description: "Research in Quantum Fields in Curved Spacetimes, Quantum-to-Classical Transition and Decoherence and Gravitational Quantum Mechanics.",
       lastName: "Singh",
-      arxivName: "Singh_S"
+      arxivName: "Singh_Suprit"
     },
     {
       name: "Prof. Tobias Toll",
@@ -161,7 +161,7 @@ const ResearchGroup = () => {
       website: "https://inspirehep.net/authors/1032510",
       description: "Research focuses on strong force phenomenology and Monte Carlo Event Generators, particularly processes sensitive to high gluon densities.",
       lastName: "Toll",
-      arxivName: "Toll_T"
+      arxivName: "Toll_Tobias"
     }
   ].sort((a, b) => a.lastName.localeCompare(b.lastName));
 
