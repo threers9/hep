@@ -481,7 +481,7 @@ useEffect(() => {
                         <p className="text-gray-600">Advisor: {member.advisor}</p>
                         <p className="text-gray-600">Year: {member.year}</p>
                         <p className="text-gray-600">Thesis: {member.thesis}</p>
-                        <p className="text-gray-600">Current Position: {member.current}</p>
+                        <p className="text-gray-600">Next Position: {member.current}</p>
                       </div>
                     )}
                   </div>
