@@ -141,7 +141,7 @@ const ResearchGroup = () => {
       area: "Theoretical High Energy Physics",
       website: "https://web.iitd.ac.in/~sarthak/",
       description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
-      arxivName: "Parikh_S",
+      arxivName: "parikh_s_1",
       group: {
         phd: [],
         postdocs: [],
