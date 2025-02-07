@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { seminarData } from './seminarData';
 
 const Card = ({ children, className = "" }) => (
   <div className={`bg-white rounded-lg shadow ${className}`}>
