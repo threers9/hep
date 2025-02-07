@@ -35,6 +35,7 @@ const ResearchGroup = () => {
     // Add this state for pagination
   const [currentPage, setCurrentPage] = useState(1);
   const publicationsPerPage = 20;
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Keep the original ArXiv fetching functionality
 const fetchArxivPublications = async (authorName) => {
@@ -415,7 +416,12 @@ const renderPublications = () => {
         author: facultyMember?.name || authorName
       }));
     })
-    .filter(pub => yearFilter === 'all' || pub.year?.toString() === yearFilter)
+    .filter(pub => {
+      const matchesYear = yearFilter === 'all' || pub.year?.toString() === yearFilter;
+      const matchesSearch = !searchQuery || 
+        pub.author.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesYear && matchesSearch;
+    })
     .sort((a, b) => b.year - a.year); // Sort by year, newest first
 
   // Calculate pagination
@@ -426,13 +432,23 @@ const renderPublications = () => {
 
   return (
     <div className="space-y-4">
-      <div className="mb-4 flex justify-end">
+     <div className="mb-4 flex justify-end space-x-4">
+        <input
+          type="text"
+          placeholder="Search by faculty name..."
+          className="border rounded-lg px-4 py-2 w-64"
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+            setCurrentPage(1);
+          }}
+        />
         <select 
           className="border rounded-lg px-4 py-2"
           value={yearFilter}
           onChange={(e) => {
             setYearFilter(e.target.value);
-            setCurrentPage(1); // Reset to first page when changing year
+            setCurrentPage(1);
           }}
         >
           <option value="all">All Years</option>
