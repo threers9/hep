@@ -179,7 +179,7 @@ const ResearchGroup = () => {
       setLoading(prev => ({ ...prev, [authorName]: true }));
       
       const baseUrl = 'https://export.arxiv.org/api/query';
-      const query = `search_query=${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+      const query = `search_query=${authorName}&searchtype=all&sortBy=submittedDate&sortOrder=descending&max_results=5`;
       const response = await fetch(`${baseUrl}?${query}`);
       const text = await response.text();
       
