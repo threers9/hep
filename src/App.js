@@ -29,6 +29,9 @@ const ResearchGroup = () => {
   const [showAllPublications, setShowAllPublications] = useState(false);
   const [expandedMemberCategory, setExpandedMemberCategory] = useState('current');
   const [expandedMember, setExpandedMember] = useState(null);
+    // Add this state for pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const publicationsPerPage = 25;
 
   // Keep the original ArXiv fetching functionality
   const fetchArxivPublications = async (authorName) => {
@@ -79,6 +82,22 @@ const ResearchGroup = () => {
       fetchArxivPublications(faculty[expandedFaculty].arxivName);
     }
   }, [expandedFaculty]);
+
+
+// Add this useEffect at the component level (alongside other useEffects)
+useEffect(() => {
+  const fetchAllPublications = async () => {
+    // Fetch publications for all faculty members when component mounts
+    for (const facultyMember of faculty) {
+      if (!publications[facultyMember.arxivName]) {
+        await fetchArxivPublications(facultyMember.arxivName);
+      }
+    }
+  };
+
+  fetchAllPublications();
+}, []); // Empty dependency array means this runs once when component mounts
+
 
   // Full faculty data with photos
   const faculty = [
@@ -511,37 +530,49 @@ const renderSeminars = () => (
   </div>
 );
 
-// Function to render the Publications tab
-const renderPublications = () => (
-  <div className="space-y-4">
-    <div className="mb-4 flex justify-end">
-      <select 
-        className="border rounded-lg px-4 py-2"
-        value={yearFilter}
-        onChange={(e) => setYearFilter(e.target.value)}
-      >
-        <option value="all">All Years</option>
-        <option value="2024">2024</option>
-        <option value="2023">2023</option>
-      </select>
-    </div>
+// Updated renderPublications function
+const renderPublications = () => {
+  // Get all publications from all faculty members
+  const allPublications = Object.entries(publications)
+    .flatMap(([authorName, pubs]) => {
+      const facultyMember = faculty.find(f => f.arxivName === authorName);
+      return (pubs || []).map(pub => ({
+        ...pub,
+        author: facultyMember?.name || authorName
+      }));
+    })
+    .filter(pub => yearFilter === 'all' || pub.year?.toString() === yearFilter)
+    .sort((a, b) => b.year - a.year); // Sort by year, newest first
 
-    <Card>
-      <CardHeader>
-        <CardTitle>Publications</CardTitle>
-      </CardHeader>
-      <CardContent>
-        {Object.entries(publications)
-          .flatMap(([authorName, pubs]) => {
-            const facultyMember = faculty.find(f => f.arxivName === authorName);
-            return (pubs || []).map(pub => ({
-              ...pub,
-              author: facultyMember?.name || authorName
-            }));
-          })
-          .filter(pub => yearFilter === 'all' || pub.year?.toString() === yearFilter)
-          .slice(0, showAllPublications ? undefined : 5)
-          .map(pub => (
+  // Calculate pagination
+  const indexOfLastPublication = currentPage * publicationsPerPage;
+  const indexOfFirstPublication = indexOfLastPublication - publicationsPerPage;
+  const currentPublications = allPublications.slice(indexOfFirstPublication, indexOfLastPublication);
+  const totalPages = Math.ceil(allPublications.length / publicationsPerPage);
+
+  return (
+    <div className="space-y-4">
+      <div className="mb-4 flex justify-end">
+        <select 
+          className="border rounded-lg px-4 py-2"
+          value={yearFilter}
+          onChange={(e) => {
+            setYearFilter(e.target.value);
+            setCurrentPage(1); // Reset to first page when changing year
+          }}
+        >
+          <option value="all">All Years</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+        </select>
+      </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Publications</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {currentPublications.map(pub => (
             <div key={pub.arxivId || Math.random()} className="mb-4 p-4 border rounded">
               <h4 className="font-semibold">
                 {pub.url ? (
@@ -562,18 +593,35 @@ const renderPublications = () => (
               )}
             </div>
           ))}
-          {!showAllPublications && (
-            <button
-              className="mt-4 text-blue-600 hover:text-blue-800"
-              onClick={() => setShowAllPublications(true)}
-            >
-              Show More Publications
-            </button>
+
+          {/* Pagination controls */}
+          {totalPages > 1 && (
+            <div className="mt-6 flex justify-center space-x-2">
+              <button
+                className={`px-4 py-2 rounded ${currentPage === 1 ? 'bg-gray-200' : 'bg-blue-600 text-white'}`}
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+              >
+                Previous
+              </button>
+              <span className="px-4 py-2">
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                className={`px-4 py-2 rounded ${currentPage === totalPages ? 'bg-gray-200' : 'bg-blue-600 text-white'}`}
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
+            </div>
           )}
-      </CardContent>
-    </Card>
-  </div>
-);
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
+
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
