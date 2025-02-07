@@ -457,7 +457,7 @@ const ResearchGroup = () => {
     </div>
   );
 
-  const renderPublications = () => (
+  const renderSeminars = () => (
     <div className="space-y-4">
       <div className="mb-4 flex justify-end">
         <select 
@@ -470,7 +470,8 @@ const ResearchGroup = () => {
           <option value="2023">2023</option>
         </select>
       </div>
-      
+
+      /*      
       <Card>
         <CardHeader>
           <CardTitle>Publications</CardTitle>
@@ -509,10 +510,11 @@ const ResearchGroup = () => {
             ))}
         </CardContent>
       </Card>
+      */
 
       <Card>
         <CardHeader>
-          <CardTitle>Recent Talks</CardTitle>
+          <CardTitle>Recent Seminars</CardTitle>
         </CardHeader>
         <CardContent>
           {[
@@ -575,8 +577,8 @@ const ResearchGroup = () => {
           Members
         </button>
         <button 
-          className={`px-4 py-2 rounded ${activeTab === 'publications' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
-          onClick={() => setActiveTab('publications')}
+          className={`px-4 py-2 rounded ${activeTab === 'seminars' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveTab('seminars')}
         >
           Seminars
         </button>
@@ -586,7 +588,7 @@ const ResearchGroup = () => {
         {activeTab === 'overview' && renderOverview()}
         {activeTab === 'faculty' && renderFaculty()}
         {activeTab === 'members' && renderMembers()}
-        {activeTab === 'publications' && renderPublications()}
+        {activeTab === 'seminars' && renderSeminars()}
       </div>
     </div>
   );
