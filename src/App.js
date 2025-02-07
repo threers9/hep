@@ -88,12 +88,22 @@ const ResearchGroup = () => {
       phd: [
         { name: "PhD Scholar 1", advisor: "Prof. Amruta Mishra", year: "2022-present", research: "Strongly Interacting Matter" },
         { name: "PhD Scholar 2", advisor: "Prof. Amruta Mishra", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Student 1", advisor: "Prof. Pradipta Ghosh", year: "2023-present", research: "Dark Matter Physics" },
-        { name: "PhD Scholar 1", advisor: "Prof. Tobias Toll", year: "2022-present", research: "Strong Force Phenomenology" },
-        { name: "PhD Scholar 2", advisor: "Prof. Tobias Toll", year: "2023-present", research: "Monte Carlo Simulations" }
+        { name: "PhD Scholar 2", advisor: "Prof. Amruta Mishra", year: "2021-present", research: "Hadron Properties" },
+        { name: "PhD Scholar 2", advisor: "Prof. Tobias Toll", year: "2021-present", research: "Hadron Properties" },
+        { name: "PhD Scholar 2", advisor: "Prof. Tobias Toll", year: "2021-present", research: "Hadron Properties" },
+        { name: "PhD Scholar 2", advisor: "Prof. Pradipta Ghosh", year: "2021-present", research: "Hadron Properties" },
+        { name: "PhD Scholar 2", advisor: "Prof. Suprit Singh", year: "2021-present", research: "Hadron Properties" },
+        { name: "PhD Scholar 2", advisor: "Prof. Abhishek Iyer", year: "2021-present", research: "Hadron Properties" },
+        { name: "PhD Scholar 2", advisor: "Prof. Abhishek Iyer", year: "2021-present", research: "Hadron Properties" },
+        { name: "PhD Scholar 2", advisor: "Prof. Tarun Sharma", year: "2021-present", research: "Hadron Properties" },
+        { name: "Arkapal Mondal", advisor: "Prof. Sarthak Parikh", year: "2022-present", research: "AdS/CFT" },
+        { name: "D Chirag", advisor: "Prof. Sarthak Parikh", year: "2024-present", research: "QFT" },
+        { name: "Rishav Saha", advisor: "Prof. Sarthak Parikh", year: "2024-present", research: "QFT" }
       ],
       postdoc: [
-        { name: "Postdoc 1", advisor: "Prof. Pradipta Ghosh", year: "2023-present", research: "Beyond Standard Model" }
+        { name: "Postdoc 1", advisor: "Prof. Tobias Toll", year: "2023-present", research: "Beyond Standard Model" },
+        { name: "Postdoc 1", advisor: "Prof. Suprit Singh", year: "2023-present", research: "Beyond Standard Model" },
+        { name: "Postdoc 1", advisor: "Prof. Suprit Singh", year: "2023-present", research: "Beyond Standard Model" }
       ]
     },
     alumni: {
@@ -169,7 +179,7 @@ const ResearchGroup = () => {
   const researchAreas = {
     "Strongly Interacting Matter & QCD": {
       description: "Research in strong interactions, hadron properties, and QCD dynamics",
-      faculty: ["Prof. Amruta Mishra", "Prof. Abhishek M. Iyer", "Prof. Tobias Toll"]
+      faculty: ["Prof. Abhishek M. Iyer", "Prof. Amruta Mishra", "Prof. Tobias Toll"]
     },
     "Beyond Standard Model & Particle Physics": {
       description: "Research in supersymmetry, dark matter, and particle phenomenology",
@@ -177,11 +187,11 @@ const ResearchGroup = () => {
     },
     "Quantum Fields & Gravity": {
       description: "Research in quantum fields, curved spacetimes, and quantum gravity",
-      faculty: ["Prof. Suprit Singh", "Prof. Sarthak Parikh"]
+      faculty: ["Prof. Sarthak Parikh", "Prof. Tarun Sharma", "Prof. Suprit Singh"]
     },
     "String Theory & Mathematical Physics": {
       description: "Research in string theory, AdS/CFT, and theoretical foundations",
-      faculty: ["Prof. Tarun Sharma", "Prof. Sarthak Parikh"]
+      faculty: ["Prof. Sarthak Parikh", "Prof. Tarun Sharma"]
     }
   };
 
@@ -217,7 +227,7 @@ const ResearchGroup = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold mb-2">High Energy Physics Research Group</h1>
+        <h1 className="text-4xl font-bold mb-2">High Energy Physics, Quantum Gravity, and Astrophysics Group</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Exploring the fundamental constituents of matter and their interactions through the Standard Model and beyond.
         </p>
@@ -256,7 +266,7 @@ const ResearchGroup = () => {
           <div className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>About High Energy Physics</CardTitle>
+                <CardTitle>About Our Research</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
