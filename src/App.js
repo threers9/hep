@@ -40,9 +40,15 @@ const fetchArxivPublications = async (authorName) => {
     
     const baseUrl = 'https://export.arxiv.org/api/query';
     // Special case for Tarun Sharma - only search in hep-th
-    const query = authorName === 'Sharma_Tarun' 
-      ? `search_query=au:${authorName}+AND+cat:hep-th&sortBy=submittedDate&sortOrder=descending&max_results=10`
-      : `search_query=au:${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+// Special cases for specific faculty members
+    let query;
+    if (authorName === 'Sharma_Tarun') {
+      query = `search_query=au:${authorName}+AND+cat:hep-th&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+    } else if (authorName === 'Ghosh_Pradipta') {
+      query = `search_query=au:${authorName}+AND+cat:hep-ph&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+    } else {
+      query = `search_query=au:${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+    }
     const response = await fetch(`${baseUrl}?${query}`);
     const text = await response.text();
     
