@@ -521,13 +521,19 @@ const renderSeminars = () => (
             area: "Stony Brook University, USA"
           },
           {
+            title: "Journal club: TBA",
+            speaker: "Amin Nizami",
+            date: "2025-02-10",
+            area: "Ashoka University"
+          },
+          {
             title: "Reconciling cosmological tensions with inelastic dark matter and dark radiation",
             speaker: "Satyabrata Mahapatra",
             date: "2025-01-29",
             area: "Sungkyunkwan University, South Korea"
           },
           {
-            title: "Feynman diagrams live in conformal families",
+            title: "Journal club: Feynman diagrams live in conformal families",
             speaker: "Siddharth Prabhu",
             date: "2025-01-27",
             area: "TIFR, Mumbai"
