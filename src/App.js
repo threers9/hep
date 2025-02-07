@@ -471,7 +471,7 @@ const ResearchGroup = () => {
         </select>
       </div>
 
-      /*      
+           
       <Card>
         <CardHeader>
           <CardTitle>Publications</CardTitle>
@@ -510,7 +510,7 @@ const ResearchGroup = () => {
             ))}
         </CardContent>
       </Card>
-      */
+      
 
       <Card>
         <CardHeader>
