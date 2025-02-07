@@ -497,7 +497,7 @@ useEffect(() => {
 
 // Function to render the Seminars tab
 const renderSeminars = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div className="space-y-4">
     <div className="mb-4 flex justify-end">
       <select 
         className="border rounded-lg px-4 py-2"
@@ -513,6 +513,7 @@ const renderSeminars = () => (
       <CardHeader>
         <CardTitle>Recent Seminars</CardTitle>
       </CardHeader>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <CardContent>
         {seminarData
         .filter(talk => yearFilter === 'all' || new Date(talk.date).getFullYear().toString() === yearFilter)
@@ -525,6 +526,7 @@ const renderSeminars = () => (
           </div>
         ))}
       </CardContent>
+      </div>
     </Card>
   </div>
 );
