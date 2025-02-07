@@ -486,8 +486,7 @@ const renderSeminars = () => (
         onChange={(e) => setYearFilter(e.target.value)}
       >
         <option value="all">All Years</option>
-        <option value="2024">2024</option>
-        <option value="2023">2023</option>
+        <option value="2025">2025</option>
       </select>
     </div>
 
@@ -498,22 +497,22 @@ const renderSeminars = () => (
       <CardContent>
         {[
           {
-            title: "Recent Developments in Strong Force Phenomenology",
-            speaker: "Prof. Tobias Toll",
-            date: "2024-02-01",
-            area: "Strong force phenomenology"
+            title: "QCD-Gravity double-copy in the Regge regime via shockwave collisions",
+            speaker: "Himanshu Raj",
+            date: "2025-02-12",
+            area: "Stony Brook University, USA"
           },
           {
-            title: "Dark Matter Search Updates",
-            speaker: "Prof. Pradipta Ghosh",
-            date: "2024-01-15",
-            area: "Beyond Standard Model phenomenology"
+            title: "Reconciling cosmological tensions with inelastic dark matter and dark radiation",
+            speaker: "Satyabrata Mahapatra",
+            date: "2025-01-29",
+            area: "Sungkyunkwan University, South Korea"
           },
           {
-            title: "Quantum Fields in Curved Spacetime",
-            speaker: "Prof. Suprit Singh",
-            date: "2024-01-10",
-            area: "Quantum Fields & Gravity"
+            title: "Feynman diagrams live in conformal families",
+            speaker: "Siddharth Prabhu",
+            date: "2025-01-27",
+            area: "TIFR, Mumbai"
           }
         ]
         .filter(talk => yearFilter === 'all' || new Date(talk.date).getFullYear().toString() === yearFilter)
@@ -562,8 +561,15 @@ const renderPublications = () => {
           }}
         >
           <option value="all">All Years</option>
+          <option value="2025">2025</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
         </select>
       </div>
 
