@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { seminarData } from './seminarData';
-import { faculty } from './facultyData';
+import { faculty, researchAreas } from './facultyData';
 
 
 const Card = ({ children, className = "" }) => (
@@ -111,34 +111,6 @@ useEffect(() => {
 }, []); // Empty dependency array means this runs once when component mounts
 
 
-
-  // Full research areas data
-  const researchAreas = {
-    "Strongly Interacting Matter & QCD": {
-      description: "Research in strong interactions, hadron properties, and QCD dynamics",
-      faculty: ["Prof. Abhishek M. Iyer", "Prof. Amruta Mishra", "Prof. Tobias Toll"]
-    },
-    "Beyond Standard Model & Particle Physics": {
-      description: "Research in supersymmetry, dark matter, and particle phenomenology",
-      faculty: ["Prof. Pradipta Ghosh"]
-    },
-    "Quantum Fields & Gravity": {
-      description: "Research in quantum fields, curved spacetimes, and quantum gravity",
-      faculty: ["Prof. Sarthak Parikh", "Prof. Tarun Sharma", "Prof. Suprit Singh"]
-    },
-    "String Theory & Mathematical Physics": {
-      description: "Research in string theory, gauge/gravity duality, and mathematical foundations",
-      faculty: ["Prof. Sarthak Parikh", "Prof. Tarun Sharma"]
-    },
-    "Quantum Computing & Quantum Information Theory": {
-      description: "Research in quantum error-correcting codes, quantum algorithms, and quantum-to-classical transitions",
-      faculty: ["Prof. Sarthak Parikh", "Prof. Suprit Singh"]
-    },
-    "AI/ML in Particle Physics": {
-      description: "Research in applications of machine learning to particle physics",
-      faculty: ["Prof. Abhishek M. Iyer"]
-    }
-  };
 
   // Full members data
   const members = {
