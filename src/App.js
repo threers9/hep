@@ -537,6 +537,18 @@ const renderSeminars = () => (
             speaker: "Siddharth Prabhu",
             date: "2025-01-27",
             area: "TIFR, Mumbai"
+          },
+          {
+            title: "Physics beyond standard model (A dark matter story)",
+            speaker: "Disha Bhatia",
+            date: "2025-01-15",
+            area: "Instituto de Fisica, Universidade de Sao Paulo, Brazil"
+          },
+          {
+            title: "Imprints of Early Universe Cosmology on Gravitational Waves",
+            speaker: "Mudit Rai",
+            date: "2025-01-07",
+            area: "Texas A&M University, USA"
           }
         ]
         .filter(talk => yearFilter === 'all' || new Date(talk.date).getFullYear().toString() === yearFilter)
