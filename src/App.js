@@ -240,7 +240,7 @@ useEffect(() => {
                                   {pub.title}
                                 </a>
                               </h4>
-                              <p className="text-gray-600 mt-2">{pub.abstract.substring(0, 0)}...</p>
+                              
                               <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} ({pub.year})</p>
                             </div>
                           ))}
