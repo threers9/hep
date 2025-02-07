@@ -34,6 +34,7 @@ export const faculty = [
       description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
       lastName: "Parikh",
       arxivName: "Parikh_Sarthak",
+      email: "sarthak",
       photoUrl: "/faculty-photos/parikh.jpg"
     },
     {
