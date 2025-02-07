@@ -431,12 +431,12 @@ const renderPublications = () => {
   const totalPages = Math.ceil(allPublications.length / publicationsPerPage);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="space-y-4">
      <div className="mb-4 flex justify-end space-x-4">
         <input
           type="text"
           placeholder="Search by faculty name..."
-          className="border rounded-lg px-4 py-2 w-64"
+          className="border rounded-lg px-4 py-2 w-28"
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
