@@ -517,7 +517,7 @@ const renderSeminars = () => (
         {seminarData
         .filter(talk => yearFilter === 'all' || new Date(talk.date).getFullYear().toString() === yearFilter)
         .map(talk => (
-          <div key={talk.title} className="mb-4 p-4 border rounded grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div key={talk.title} className="mb-4 p-4 border rounded">
             <h4 className="font-semibold">{talk.title}</h4>
             <p className="text-gray-600">{talk.speaker}</p>
             <p className="text-gray-600">{talk.area}</p>
