@@ -34,7 +34,7 @@ export const faculty = [
       description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
       lastName: "Parikh",
       arxivName: "Parikh_Sarthak",
-      email: "sarthak",
+      email: "sarthak at iitd.ac.in",
       photoUrl: "/faculty-photos/parikh.jpg"
     },
     {
@@ -44,6 +44,7 @@ export const faculty = [
       description: "Research in Chern Simons theories & Anyonic statistics, AdS-CFT, Higher Spin gauge theories, Fluid dynamics & gravity, Supersymmetry, String theory.",
       lastName: "Sharma",
       arxivName: "Sharma_Tarun",
+      email: "tks at iitd.ac.in",
       photoUrl: "/faculty-photos/sharma.jpg"
     },
     {
