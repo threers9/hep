@@ -130,7 +130,7 @@ const ResearchGroup = () => {
       area: "QCD and Composite Dynamics",
       website: "https://inspirehep.net/authors/1272471",
       description: "Research in QCD/Composite dynamics, Physics of Kaons and ML for particle physics and beyond.",
-      arxivName: "Iyer_A",
+      arxivName: "Iyer_Abhishek",
       group: {
         phd: [],
         postdocs: [],
