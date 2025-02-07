@@ -184,8 +184,16 @@ useEffect(() => {
       faculty: ["Prof. Sarthak Parikh", "Prof. Tarun Sharma", "Prof. Suprit Singh"]
     },
     "String Theory & Mathematical Physics": {
-      description: "Research in string theory, AdS/CFT, and theoretical foundations",
+      description: "Research in string theory, gauge/gravity duality, and mathematical foundations",
       faculty: ["Prof. Sarthak Parikh", "Prof. Tarun Sharma"]
+    }
+    "Quantum Computing & Quantum Information Theory": {
+      description: "Research in quantum error-correcting codes, quantum algorithms, and quantum-to-classical transitions",
+      faculty: ["Prof. Sarthak Parikh", "Prof. Suprit Singh"]
+    }
+    "AI/ML in Particle Physics": {
+      description: "Research in applications of machine learning to particle physics",
+      faculty: ["Prof. Abhishek M. Iyer"]
     }
   };
 
