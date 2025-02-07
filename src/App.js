@@ -239,7 +239,7 @@ useEffect(() => {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>About Our Research</CardTitle>
+          <CardTitle>About our Research</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-gray-600 mb-4">
