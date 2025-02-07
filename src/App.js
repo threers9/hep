@@ -549,7 +549,7 @@ const ResearchGroup = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold mb-2">High Energy Physics, Quantum Gravity, and Astrophysics Group</h1>
+        <h1 className="text-4xl font-bold mb-2">High Energy Physics, Quantum Gravity, and Astrophysics Group at IIT Delhi</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Exploring the fundamental constituents of matter and their interactions through the Standard Model and beyond.
         </p>
@@ -578,7 +578,7 @@ const ResearchGroup = () => {
           className={`px-4 py-2 rounded ${activeTab === 'publications' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
           onClick={() => setActiveTab('publications')}
         >
-          Publications & Talks
+          Seminars
         </button>
       </div>
 
