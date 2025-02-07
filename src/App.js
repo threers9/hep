@@ -557,7 +557,7 @@ const ResearchGroup = () => {
         </p>
       </div>
 
-      <div className="mb-8 flex justify-center space-x-4">
+<div className="mb-8 flex justify-center space-x-4">
         <button 
           className={`px-4 py-2 rounded ${activeTab === 'overview' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
           onClick={() => setActiveTab('overview')}
@@ -582,6 +582,12 @@ const ResearchGroup = () => {
         >
           Seminars
         </button>
+        <button 
+          className={`px-4 py-2 rounded ${activeTab === 'publications' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveTab('publications')}
+        >
+          Publications
+        </button>
       </div>
 
       <div className="space-y-6">
@@ -589,6 +595,7 @@ const ResearchGroup = () => {
         {activeTab === 'faculty' && renderFaculty()}
         {activeTab === 'members' && renderMembers()}
         {activeTab === 'seminars' && renderSeminars()}
+        {activeTab === 'publications' && renderPublications()}
       </div>
     </div>
   );
