@@ -137,7 +137,7 @@ const ResearchGroup = () => {
       website: "https://web.iitd.ac.in/~sarthak/",
       description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
       lastName: "Parikh",
-      arxivName: "Parikh_S"
+      arxivName: "Parikh_Sarthak"
     },
     {
       name: "Prof. Tarun Sharma",
