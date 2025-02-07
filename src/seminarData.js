@@ -35,4 +35,4 @@ export const seminarData = [
             date: "2025-01-07",
             area: "Texas A&M University, USA"
           }
-        ]
+        ];
