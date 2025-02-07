@@ -255,7 +255,7 @@ useEffect(() => {
           </p>
           <ul className="list-disc ml-6 text-gray-600 mb-4">
             <li>Quantum theory of gravity</li>
-            <li>Uunification of fundamental interactions including gravity</li>
+            <li>Unification of fundamental interactions including gravity</li>
             <li>Hierarchy problems</li>
             <li>Non-zero neutrino masses and mixing</li>
             <li>Dark matter evidence from galaxy rotation curves</li>
