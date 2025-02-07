@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { seminarData } from './seminarData';
 import { faculty, researchAreas } from './facultyData';
-
+import { members } from './membersData';
 
 const Card = ({ children, className = "" }) => (
   <div className={`bg-white rounded-lg shadow ${className}`}>
@@ -110,39 +110,6 @@ useEffect(() => {
   fetchAllPublications();
 }, []); // Empty dependency array means this runs once when component mounts
 
-
-
-  // Full members data
-  const members = {
-    current: {
-      postdoc: [
-        { name: "Postdoc 1", year: "2023-present", research: "Beyond Standard Model" },
-        { name: "Postdoc 1", year: "2023-present", research: "Beyond Standard Model" },
-        { name: "Postdoc 1", year: "2023-present", research: "Beyond Standard Model" }
-      ],
-      phd: [
-        { name: "PhD Scholar 1", advisor: "Prof. Amruta Mishra", year: "2022-present", research: "Strongly Interacting Matter" },
-        { name: "PhD Scholar 2", advisor: "Prof. Amruta Mishra", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Amruta Mishra", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Tobias Toll", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Tobias Toll", year: "2021-present", research: "Hadron Properties" },
-        { name: "Pankaj Borah", advisor: "Prof. Pradipta Ghosh", year: "2019-present", research: "Dark Matter, Phase Transition, Gravitational Waves" },
-        { name: "PhD Scholar 2", advisor: "Prof. Suprit Singh", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Abhishek Iyer", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Abhishek Iyer", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Tarun Sharma", year: "2021-present", research: "Hadron Properties" },
-        { name: "Arkapal Mondal", advisor: "Prof. Sarthak Parikh", year: "2022-present", research: "AdS/CFT" },
-        { name: "D Chirag", advisor: "Prof. Sarthak Parikh", year: "2024-present", research: "QFT" },
-        { name: "Rishav Saha", advisor: "Prof. Sarthak Parikh", year: "2024-present", research: "QFT" }
-      ]
-    },
-    alumni: {
-      phd: [
-        { name: "PhD Alumni 1", advisor: "Prof. Amruta Mishra", year: "2018-2023", thesis: "Properties of Hadrons in Strong Fields", current: "Postdoc at TIFR" },
-        { name: "PhD Alumni 2", advisor: "Prof. Pradipta Ghosh", year: "2017-2022", thesis: "Dark Matter Detection", current: "Faculty at IISER" }
-      ]
-    }
-  };
 
   const renderOverview = () => (
     <div className="space-y-6">
