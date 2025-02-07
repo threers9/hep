@@ -107,7 +107,7 @@ const ResearchGroup = () => {
       description: "Research focuses on medium modifications of hadron properties at high temperatures and densities, relevant to neutron star phenomenology and heavy ion collision experiments.",
       lastName: "Mishra",
       arxivName: "Mishra_Amruta",
-      photoUrl: "/api/placeholder/120/120"
+      photoUrl: "/faculty-photos/mishra.jpg"
     },
     {
       name: "Prof. Sarthak Parikh",
@@ -116,7 +116,7 @@ const ResearchGroup = () => {
       description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
       lastName: "Parikh",
       arxivName: "Parikh_Sarthak",
-      photoUrl: "/api/placeholder/120/120"
+      photoUrl: "/faculty-photos/parikh.jpg"
     },
     {
       name: "Prof. Tarun Sharma",
@@ -125,7 +125,7 @@ const ResearchGroup = () => {
       description: "Research in Chern Simons theories & Anyonic statistics, AdS-CFT, Higher Spin gauge theories, Fluid dynamics & gravity, Supersymmetry, String theory.",
       lastName: "Sharma",
       arxivName: "Sharma_Tarun",
-      photoUrl: "/api/placeholder/120/120"
+      photoUrl: "/faculty-photos/sharma.jpg"
     },
     {
       name: "Prof. Suprit Singh",
@@ -134,7 +134,7 @@ const ResearchGroup = () => {
       description: "Research in Quantum Fields in Curved Spacetimes, Quantum-to-Classical Transition and Decoherence and Gravitational Quantum Mechanics.",
       lastName: "Singh",
       arxivName: "Singh_Suprit",
-      photoUrl: "/api/placeholder/120/120"
+      photoUrl: "/faculty-photos/ssingh.jpg"
     },
     {
       name: "Prof. Tobias Toll",
@@ -143,7 +143,7 @@ const ResearchGroup = () => {
       description: "Research focuses on strong force phenomenology and Monte Carlo Event Generators, particularly processes sensitive to high gluon densities.",
       lastName: "Toll",
       arxivName: "Toll_Tobias",
-      photoUrl: "/api/placeholder/120/120"
+      photoUrl: "/faculty-photos/toll.jpg"
     }
   ].sort((a, b) => a.lastName.localeCompare(b.lastName));
 
