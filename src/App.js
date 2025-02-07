@@ -34,48 +34,51 @@ const ResearchGroup = () => {
   const publicationsPerPage = 25;
 
   // Keep the original ArXiv fetching functionality
-  const fetchArxivPublications = async (authorName) => {
-    try {
-      setLoading(prev => ({ ...prev, [authorName]: true }));
+const fetchArxivPublications = async (authorName) => {
+  try {
+    setLoading(prev => ({ ...prev, [authorName]: true }));
+    
+    const baseUrl = 'https://export.arxiv.org/api/query';
+    // Special case for Tarun Sharma - only search in hep-th
+    const query = authorName === 'Sharma_Tarun' 
+      ? `search_query=au:${authorName}+AND+cat:hep-th&sortBy=submittedDate&sortOrder=descending&max_results=10`
+      : `search_query=au:${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+    const response = await fetch(`${baseUrl}?${query}`);
+    const text = await response.text();
+    
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(text, "text/xml");
+    const entries = xmlDoc.getElementsByTagName("entry");
+    
+    const papers = Array.from(entries).map(entry => {
+      const title = entry.getElementsByTagName("title")[0]?.textContent || "";
+      const published = entry.getElementsByTagName("published")[0]?.textContent || "";
+      const abstract = entry.getElementsByTagName("summary")[0]?.textContent || "";
+      const arxivId = entry.getElementsByTagName("id")[0]?.textContent?.split("/").pop() || "";
       
-      const baseUrl = 'https://export.arxiv.org/api/query';
-      const query = `search_query=au:${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=10`;
-      const response = await fetch(`${baseUrl}?${query}`);
-      const text = await response.text();
-      
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(text, "text/xml");
-      const entries = xmlDoc.getElementsByTagName("entry");
-      
-      const papers = Array.from(entries).map(entry => {
-        const title = entry.getElementsByTagName("title")[0]?.textContent || "";
-        const published = entry.getElementsByTagName("published")[0]?.textContent || "";
-        const abstract = entry.getElementsByTagName("summary")[0]?.textContent || "";
-        const arxivId = entry.getElementsByTagName("id")[0]?.textContent?.split("/").pop() || "";
-        
-        return {
-          title: title.replace(/\n/g, " ").trim(),
-          year: new Date(published).getFullYear(),
-          abstract: abstract.replace(/\n/g, " ").trim(),
-          arxivId,
-          url: `https://arxiv.org/abs/${arxivId}`
-        };
-      });
+      return {
+        title: title.replace(/\n/g, " ").trim(),
+        year: new Date(published).getFullYear(),
+        abstract: abstract.replace(/\n/g, " ").trim(),
+        arxivId,
+        url: `https://arxiv.org/abs/${arxivId}`
+      };
+    });
 
-      setPublications(prev => ({
-        ...prev,
-        [authorName]: papers
-      }));
-    } catch (error) {
-      console.error(`Error fetching publications for ${authorName}:`, error);
-      setPublications(prev => ({
-        ...prev,
-        [authorName]: []
-      }));
-    } finally {
-      setLoading(prev => ({ ...prev, [authorName]: false }));
-    }
-  };
+    setPublications(prev => ({
+      ...prev,
+      [authorName]: papers
+    }));
+  } catch (error) {
+    console.error(`Error fetching publications for ${authorName}:`, error);
+    setPublications(prev => ({
+      ...prev,
+      [authorName]: []
+    }));
+  } finally {
+    setLoading(prev => ({ ...prev, [authorName]: false }));
+  }
+};
 
   useEffect(() => {
     if (expandedFaculty !== null && !publications[faculty[expandedFaculty].arxivName]) {
