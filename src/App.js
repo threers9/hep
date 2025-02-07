@@ -241,7 +241,7 @@ useEffect(() => {
                                 </a>
                               </h4>
                               
-                              <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} ({pub.year})</p>
+
                             </div>
                           ))}
                         </div>
@@ -469,7 +469,7 @@ const renderPublications = () => {
                 <p className="text-gray-600 mt-2">{pub.abstract.substring(0, 200)}...</p>
               )}
               {pub.arxivId && (
-                <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} ({pub.year})</p>
+                <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} </p>
               )}
             </div>
           ))}
