@@ -226,7 +226,7 @@ useEffect(() => {
                       >
                         Faculty Website →
                       </a>
-                      <p className="text-gray-600 font-mono fs-6">{f.email}</p>
+                      <p className="text-gray-600 font-mono">{f.email}</p>
                     </div>
                     <div className="mt-6">
                       <h4 className="font-semibold mb-4">Recent Publications</h4>
