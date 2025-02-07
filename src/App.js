@@ -89,7 +89,7 @@ const ResearchGroup = () => {
       description: "Research in Supersymmetric Models, R-parity violation, Neutrino physics, Electroweak Phase Transition and Gravitational Waves, Collider, Dark Matter, Charged Lepton Flavour Violation",
       lastName: "Ghosh",
       arxivName: "Ghosh_Pradipta",
-      photoUrl: "/api/placeholder/120/120"
+      photoUrl: "/faculty-photos/ghosh.jpg"
     },
     {
       name: "Prof. Abhishek M. Iyer",
@@ -98,7 +98,7 @@ const ResearchGroup = () => {
       description: "Research in QCD/Composite dynamics, Physics of Kaons and ML for particle physics and beyond.",
       lastName: "Iyer",
       arxivName: "Iyer_A_M",
-      photoUrl: "/api/placeholder/120/120"
+      photoUrl: "/faculty-photos/iyer.jpg"
     },
     {
       name: "Prof. Amruta Mishra",
