@@ -520,7 +520,7 @@ const renderSeminars = () => (
           <div key={talk.title} className="mb-4 p-4 border rounded">
             <h4 className="font-semibold">{talk.title}</h4>
             <p className="text-gray-600">{talk.speaker}</p>
-            <p className="text-gray-500">{new Date(talk.date).toLocaleDateString()}</p>
+            <p className="text-gray-500">{new Date(talk.date).toLocaleDateString('en-GB')}</p>
             <p className="text-gray-600">{talk.area}</p>
           </div>
         ))}
@@ -569,7 +569,6 @@ const renderPublications = () => {
           <option value="2020">2020</option>
           <option value="2019">2019</option>
           <option value="2018">2018</option>
-          <option value="2017">2017</option>
         </select>
       </div>
 
