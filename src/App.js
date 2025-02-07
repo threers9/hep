@@ -436,7 +436,7 @@ const renderPublications = () => {
         <input
           type="text"
           placeholder="Search by faculty name..."
-          className="border rounded-lg px-4 py-2 w-28"
+          className="border rounded-lg px-4 py-2 w-40"
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
