@@ -509,11 +509,11 @@ const renderSeminars = () => (
       </select>
     </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
     <Card>
       <CardHeader>
         <CardTitle>Recent Seminars</CardTitle>
       </CardHeader>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <CardContent>
         {seminarData
         .filter(talk => yearFilter === 'all' || new Date(talk.date).getFullYear().toString() === yearFilter)
@@ -526,8 +526,8 @@ const renderSeminars = () => (
           </div>
         ))}
       </CardContent>
-      </div>
     </Card>
+        </div>
   </div>
 );
 
