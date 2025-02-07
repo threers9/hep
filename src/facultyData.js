@@ -7,6 +7,7 @@ export const faculty = [
       description: "Research in Supersymmetric Models, R-parity violation, Neutrino physics, Electroweak Phase Transition and Gravitational Waves, Collider, Dark Matter, Charged Lepton Flavour Violation",
       lastName: "Ghosh",
       arxivName: "Ghosh_Pradipta",
+      email: "tphyspg at physics.iitd.ac.in",
       photoUrl: "/faculty-photos/ghosh.jpg"
     },
     {
@@ -16,6 +17,7 @@ export const faculty = [
       description: "Research in QCD/Composite dynamics, Physics of Kaons and ML for particle physics and beyond.",
       lastName: "Iyer",
       arxivName: "Iyer_A_M",
+      email: "iyerabhishek at physics.iitd.ac.in",
       photoUrl: "/faculty-photos/iyer.jpg"
     },
     {
@@ -25,6 +27,7 @@ export const faculty = [
       description: "Research focuses on medium modifications of hadron properties at high temperatures and densities, relevant to neutron star phenomenology and heavy ion collision experiments.",
       lastName: "Mishra",
       arxivName: "Mishra_Amruta",
+      email: "amruta at physics.iitd.ac.in",
       photoUrl: "/faculty-photos/mishra.jpg"
     },
     {
@@ -34,7 +37,7 @@ export const faculty = [
       description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
       lastName: "Parikh",
       arxivName: "Parikh_Sarthak",
-      email: "sarthak at iitd.ac.in",
+      email: "sarthak at physics.iitd.ac.in",
       photoUrl: "/faculty-photos/parikh.jpg"
     },
     {
@@ -44,7 +47,7 @@ export const faculty = [
       description: "Research in Chern Simons theories & Anyonic statistics, AdS-CFT, Higher Spin gauge theories, Fluid dynamics & gravity, Supersymmetry, String theory.",
       lastName: "Sharma",
       arxivName: "Sharma_Tarun",
-      email: "tks at iitd.ac.in",
+      email: "tks at physics.iitd.ac.in",
       photoUrl: "/faculty-photos/sharma.jpg"
     },
     {
@@ -54,6 +57,7 @@ export const faculty = [
       description: "Research in Quantum Fields in Curved Spacetimes, Quantum-to-Classical Transition and Decoherence and Gravitational Quantum Mechanics.",
       lastName: "Singh",
       arxivName: "Singh_Suprit",
+      email: "suprit at physics.iitd.ac.in",
       photoUrl: "/faculty-photos/ssingh.jpg"
     },
     {
@@ -63,6 +67,7 @@ export const faculty = [
       description: "Research focuses on strong force phenomenology and Monte Carlo Event Generators, particularly processes sensitive to high gluon densities.",
       lastName: "Toll",
       arxivName: "Toll_Tobias",
+      email: "tobiastoll at physics.iitd.ac.in",
       photoUrl: "/faculty-photos/toll.jpg"
     }
   ].sort((a, b) => a.lastName.localeCompare(b.lastName));
