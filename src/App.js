@@ -509,7 +509,6 @@ const renderSeminars = () => (
       </select>
     </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
     <Card>
       <CardHeader>
         <CardTitle>Recent Seminars</CardTitle>
@@ -518,16 +517,17 @@ const renderSeminars = () => (
         {seminarData
         .filter(talk => yearFilter === 'all' || new Date(talk.date).getFullYear().toString() === yearFilter)
         .map(talk => (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div key={talk.title} className="mb-4 p-4 border rounded">
             <h4 className="font-semibold">{talk.title}</h4>
             <p className="text-gray-600">{talk.speaker}</p>
             <p className="text-gray-600">{talk.area}</p>
             <p className="text-gray-500">{new Date(talk.date).toLocaleDateString('en-GB')}</p>
           </div>
+                  </div>
         ))}
       </CardContent>
     </Card>
-        </div>
   </div>
 );
 
