@@ -240,7 +240,7 @@ useEffect(() => {
                                   {pub.title}
                                 </a>
                               </h4>
-                              <p className="text-gray-600 mt-2">{pub.abstract.substring(0, 200)}...</p>
+                              <p className="text-gray-600 mt-2">{pub.abstract.substring(0, 0)}...</p>
                               <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} ({pub.year})</p>
                             </div>
                           ))}
@@ -585,7 +585,7 @@ const renderPositions = () => (
       <div className="mb-8 text-center">
         <h1 className="text-4xl font-bold mb-2">High Energy Physics and Quantum Gravity Group at IIT Delhi</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Exploring the fundamental constituents of matter and their interactions in our Universe and beyond.
+          Exploring the fundamental constituents of matter in our Universe and their interactions
         </p>
       </div>
 
