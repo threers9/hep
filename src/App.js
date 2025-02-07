@@ -497,7 +497,7 @@ useEffect(() => {
 
 // Function to render the Seminars tab
 const renderSeminars = () => (
-  <div className="space-y-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div className="mb-4 flex justify-end">
       <select 
         className="border rounded-lg px-4 py-2"
