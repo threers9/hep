@@ -31,7 +31,7 @@ const ResearchGroup = () => {
   const [expandedMember, setExpandedMember] = useState(null);
     // Add this state for pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const publicationsPerPage = 25;
+  const publicationsPerPage = 20;
 
   // Keep the original ArXiv fetching functionality
 const fetchArxivPublications = async (authorName) => {
@@ -43,11 +43,11 @@ const fetchArxivPublications = async (authorName) => {
 // Special cases for specific faculty members
     let query;
     if (authorName === 'Sharma_Tarun') {
-      query = `search_query=au:${authorName}+AND+cat:hep-th&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+      query = `search_query=au:${authorName}+AND+cat:hep-th&sortBy=submittedDate&sortOrder=descending&max_results=20`;
     } else if (authorName === 'Ghosh_Pradipta') {
-      query = `search_query=au:${authorName}+AND+cat:hep-ph&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+      query = `search_query=au:${authorName}+AND+cat:hep-ph&sortBy=submittedDate&sortOrder=descending&max_results=20`;
     } else {
-      query = `search_query=au:${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=10`;
+      query = `search_query=au:${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=20`;
     }
     const response = await fetch(`${baseUrl}?${query}`);
     const text = await response.text();
@@ -356,7 +356,7 @@ useEffect(() => {
                         <p className="text-gray-500 italic">Loading publications...</p>
                       ) : publications[f.arxivName] ? (
                         <div className="space-y-4">
-                          {publications[f.arxivName].slice(0, 5).map(pub => (
+                          {publications[f.arxivName].slice(0, 4).map(pub => (
                             <div key={pub.arxivId} className="p-4 border rounded">
                               <h4 className="font-semibold">
                                 <a href={pub.url} target="_blank" rel="noopener noreferrer" 
