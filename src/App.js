@@ -457,96 +457,123 @@ const ResearchGroup = () => {
     </div>
   );
 
-  const renderSeminars = () => (
-    <div className="space-y-4">
-      <div className="mb-4 flex justify-end">
-        <select 
-          className="border rounded-lg px-4 py-2"
-          value={yearFilter}
-          onChange={(e) => setYearFilter(e.target.value)}
-        >
-          <option value="all">All Years</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-        </select>
-      </div>
+// Function to render the Seminars tab
+const renderSeminars = () => (
+  <div className="space-y-4">
+    <div className="mb-4 flex justify-end">
+      <select 
+        className="border rounded-lg px-4 py-2"
+        value={yearFilter}
+        onChange={(e) => setYearFilter(e.target.value)}
+      >
+        <option value="all">All Years</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+      </select>
+    </div>
 
-           
-      <Card>
-        <CardHeader>
-          <CardTitle>Publications</CardTitle>
-        </CardHeader>
-        <CardContent>
-          {Object.entries(publications)
-            .flatMap(([authorName, pubs]) => {
-              const facultyMember = faculty.find(f => f.arxivName === authorName);
-              return (pubs || []).map(pub => ({
-                ...pub,
-                author: facultyMember?.name || authorName
-              }));
-            })
-            .filter(pub => yearFilter === 'all' || pub.year?.toString() === yearFilter)
-            .slice(0, showAllPublications ? undefined : 5)
-            .map(pub => (
-              <div key={pub.arxivId || Math.random()} className="mb-4 p-4 border rounded">
-                <h4 className="font-semibold">
-                  {pub.url ? (
-                    <a href={pub.url} target="_blank" rel="noopener noreferrer" 
-                       className="text-blue-600 hover:text-blue-800">
-                      {pub.title}
-                    </a>
-                  ) : (
-                    pub.title
-                  )}
-                </h4>
-                <p className="text-gray-600">{pub.author}</p>
-                {pub.abstract && (
-                  <p className="text-gray-600 mt-2">{pub.abstract.substring(0, 200)}...</p>
-                )}
-                {pub.arxivId && (
-                  <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} ({pub.year})</p>
-                )}
-              </div>
-            ))}
-        </CardContent>
-      </Card>
-      
+    <Card>
+      <CardHeader>
+        <CardTitle>Recent Seminars</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {[
+          {
+            title: "Recent Developments in Strong Force Phenomenology",
+            speaker: "Prof. Tobias Toll",
+            date: "2024-02-01",
+            area: "Strong force phenomenology"
+          },
+          {
+            title: "Dark Matter Search Updates",
+            speaker: "Prof. Pradipta Ghosh",
+            date: "2024-01-15",
+            area: "Beyond Standard Model phenomenology"
+          },
+          {
+            title: "Quantum Fields in Curved Spacetime",
+            speaker: "Prof. Suprit Singh",
+            date: "2024-01-10",
+            area: "Quantum Fields & Gravity"
+          }
+        ]
+        .filter(talk => yearFilter === 'all' || new Date(talk.date).getFullYear().toString() === yearFilter)
+        .map(talk => (
+          <div key={talk.title} className="mb-4 p-4 border rounded">
+            <h4 className="font-semibold">{talk.title}</h4>
+            <p className="text-gray-600">{talk.speaker}</p>
+            <p className="text-gray-500">{new Date(talk.date).toLocaleDateString()}</p>
+            <p className="text-gray-600">{talk.area}</p>
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  </div>
+);
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Recent Seminars</CardTitle>
-        </CardHeader>
-        <CardContent>
-          {[
-            {
-              title: "Recent Developments in Strong Force Phenomenology",
-              speaker: "Prof. Tobias Toll",
-              date: "2024-02-01",
-              area: "Strong force phenomenology"
-            },
-            {
-              title: "Dark Matter Search Updates",
-              speaker: "Prof. Pradipta Ghosh",
-              date: "2024-01-15",
-              area: "Beyond Standard Model phenomenology"
-            },
-            {
-              title: "Quantum Fields in Curved Spacetime",
-              speaker: "Prof. Suprit Singh",
-              date: "2024-01-10",
-              area: "Quantum Fields & Gravity"
-            }
-          ].map(talk => (
-            <div key={talk.title} className="mb-4 p-4 border rounded">
-              <h4 className="font-semibold">{talk.title}</h4>
-              <p className="text-gray-600">{talk.speaker}</p>
-              <p className="text-gray-500">{new Date(talk.date).toLocaleDateString()}</p>
+// Function to render the Publications tab
+const renderPublications = () => (
+  <div className="space-y-4">
+    <div className="mb-4 flex justify-end">
+      <select 
+        className="border rounded-lg px-4 py-2"
+        value={yearFilter}
+        onChange={(e) => setYearFilter(e.target.value)}
+      >
+        <option value="all">All Years</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+      </select>
+    </div>
+
+    <Card>
+      <CardHeader>
+        <CardTitle>Publications</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {Object.entries(publications)
+          .flatMap(([authorName, pubs]) => {
+            const facultyMember = faculty.find(f => f.arxivName === authorName);
+            return (pubs || []).map(pub => ({
+              ...pub,
+              author: facultyMember?.name || authorName
+            }));
+          })
+          .filter(pub => yearFilter === 'all' || pub.year?.toString() === yearFilter)
+          .slice(0, showAllPublications ? undefined : 5)
+          .map(pub => (
+            <div key={pub.arxivId || Math.random()} className="mb-4 p-4 border rounded">
+              <h4 className="font-semibold">
+                {pub.url ? (
+                  <a href={pub.url} target="_blank" rel="noopener noreferrer" 
+                     className="text-blue-600 hover:text-blue-800">
+                    {pub.title}
+                  </a>
+                ) : (
+                  pub.title
+                )}
+              </h4>
+              <p className="text-gray-600">{pub.author}</p>
+              {pub.abstract && (
+                <p className="text-gray-600 mt-2">{pub.abstract.substring(0, 200)}...</p>
+              )}
+              {pub.arxivId && (
+                <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} ({pub.year})</p>
+              )}
             </div>
           ))}
-        </CardContent>
-      </Card>
-    </div>
-  );
+          {!showAllPublications && (
+            <button
+              className="mt-4 text-blue-600 hover:text-blue-800"
+              onClick={() => setShowAllPublications(true)}
+            >
+              Show More Publications
+            </button>
+          )}
+      </CardContent>
+    </Card>
+  </div>
+);
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
