@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, ChevronDown, ChevronUp } from 'lucide-react';
 
-// Card components remain the same...
+// Simple Card components
 const Card = ({ children, className = "" }) => (
   <div className={`bg-white rounded-lg shadow ${className}`}>
     {children}
@@ -30,6 +30,149 @@ const ResearchGroup = () => {
   const [loading, setLoading] = useState({});
   const [showAllPublications, setShowAllPublications] = useState(false);
   const [selectedArea, setSelectedArea] = useState(null);
+  const [expandedMemberCategory, setExpandedMemberCategory] = useState('current');
+
+  const members = {
+    current: {
+      phd: [
+        { name: "PhD Scholar 1", advisor: "Prof. Amruta Mishra", year: "2022-present", research: "Strongly Interacting Matter" },
+        { name: "PhD Scholar 2", advisor: "Prof. Amruta Mishra", year: "2021-present", research: "Hadron Properties" },
+        { name: "PhD Student 1", advisor: "Prof. Pradipta Ghosh", year: "2023-present", research: "Dark Matter Physics" },
+        { name: "PhD Scholar 1", advisor: "Prof. Tobias Toll", year: "2022-present", research: "Strong Force Phenomenology" },
+        { name: "PhD Scholar 2", advisor: "Prof. Tobias Toll", year: "2023-present", research: "Monte Carlo Simulations" }
+      ],
+      msc: [
+        { name: "MSc Student 1", advisor: "Prof. Suprit Singh", year: "2024", research: "Quantum Fields" },
+        { name: "MSc Student 2", advisor: "Prof. Tarun Sharma", year: "2024", research: "String Theory" }
+      ],
+      undergraduate: [
+        { name: "UG Student 1", advisor: "Prof. Abhishek M. Iyer", year: "2024", project: "ML in Particle Physics" },
+        { name: "UG Student 2", advisor: "Prof. Sarthak Parikh", year: "2024", project: "Quantum Information" }
+      ],
+      postdoc: [
+        { name: "Postdoc 1", advisor: "Prof. Pradipta Ghosh", year: "2023-present", research: "Beyond Standard Model" }
+      ]
+    },
+    alumni: {
+      phd: [
+        { name: "PhD Alumni 1", advisor: "Prof. Amruta Mishra", year: "2018-2023", thesis: "Properties of Hadrons in Strong Fields", current: "Postdoc at TIFR" },
+        { name: "PhD Alumni 2", advisor: "Prof. Pradipta Ghosh", year: "2017-2022", thesis: "Dark Matter Detection", current: "Faculty at IISER" }
+      ],
+      msc: [
+        { name: "MSc Alumni 1", year: "2023", project: "Quantum Field Theory", current: "PhD at Princeton" },
+        { name: "MSc Alumni 2", year: "2022", project: "String Theory", current: "Industry" }
+      ],
+      undergraduate: [
+        { name: "UG Alumni 1", year: "2023", project: "Particle Physics", current: "Graduate School at MIT" },
+        { name: "UG Alumni 2", year: "2022", project: "Quantum Computing", current: "Industry" }
+      ]
+    }
+  };
+
+  const faculty = [
+    {
+      name: "Prof. Amruta Mishra",
+      area: "Physics of strongly interacting matter",
+      website: "https://web.iitd.ac.in/~amruta/",
+      description: "Research focuses on medium modifications of hadron properties at high temperatures and densities, relevant to neutron star phenomenology and heavy ion collision experiments.",
+      arxivName: "Mishra_A",
+      group: {
+        phd: ["PhD Scholar 1", "PhD Scholar 2"],
+        postdocs: [],
+      }
+    },
+    {
+      name: "Prof. Pradipta Ghosh",
+      area: "Beyond Standard Model phenomenology",
+      website: "https://web.iitd.ac.in/~tphyspg/",
+      description: "Research in Supersymmetric Models, R-parity violation, Neutrino physics, Electroweak Phase Transition and Gravitational Waves, Collider, Dark Matter, Charged Lepton Flavour Violation",
+      arxivName: "Ghosh_P",
+      group: {
+        phd: ["PhD Student 1"],
+        postdocs: ["Postdoc 1"],
+      }
+    },
+    {
+      name: "Prof. Tobias Toll",
+      area: "Strong force phenomenology",
+      website: "https://inspirehep.net/authors/1032510",
+      description: "Research focuses on strong force phenomenology and Monte Carlo Event Generators, particularly processes sensitive to high gluon densities.",
+      arxivName: "Toll_T",
+      group: {
+        phd: ["PhD Scholar 1", "PhD Scholar 2"],
+        postdocs: [],
+      }
+    },
+    {
+      name: "Prof. Suprit Singh",
+      area: "Quantum Fields in Curved Spacetimes",
+      website: "https://supritsinghlab.github.io/",
+      description: "Research in Quantum Fields in Curved Spacetimes, Quantum-to-Classical Transition and Decoherence and Gravitational Quantum Mechanics.",
+      arxivName: "Singh_S",
+      group: {
+        phd: [],
+        postdocs: [],
+      }
+    },
+    {
+      name: "Prof. Tarun Sharma",
+      area: "String Theory",
+      website: "https://inspirehep.net/authors/1077841",
+      description: "Research in Chern Simons theories & Anyonic statistics, AdS-CFT, Higher Spin gauge theories, Fluid dynamics & gravity, Supersymmetry, String theory.",
+      arxivName: "Sharma_T",
+      group: {
+        phd: [],
+        postdocs: [],
+      }
+    },
+    {
+      name: "Prof. Abhishek M. Iyer",
+      area: "QCD and Composite Dynamics",
+      website: "https://inspirehep.net/authors/1272471",
+      description: "Research in QCD/Composite dynamics, Physics of Kaons and ML for particle physics and beyond.",
+      arxivName: "Iyer_A",
+      group: {
+        phd: [],
+        postdocs: [],
+      }
+    },
+    {
+      name: "Prof. Sarthak Parikh",
+      area: "Theoretical High Energy Physics",
+      website: "https://web.iitd.ac.in/~sarthak/",
+      description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
+      arxivName: "Parikh_S",
+      group: {
+        phd: [],
+        postdocs: [],
+      }
+    }
+  ];
+
+  const researchAreas = [
+    "Strongly Interacting Matter",
+    "Beyond Standard Model",
+    "Strong Force Phenomenology",
+    "Quantum Fields in Curved Spacetimes",
+    "String Theory",
+    "QCD and Composite Dynamics",
+    "Theoretical High Energy Physics"
+  ];
+
+  const talks = [
+    {
+      title: "Recent Developments in Strong Force Phenomenology",
+      speaker: "Prof. Tobias Toll",
+      date: "2024-02-01",
+      area: "Strong force phenomenology"
+    },
+    {
+      title: "Dark Matter Search Updates",
+      speaker: "Prof. Pradipta Ghosh",
+      date: "2024-01-15",
+      area: "Beyond Standard Model phenomenology"
+    }
+  ];
 
   const fetchArxivPublications = async (authorName) => {
     try {
@@ -79,149 +222,10 @@ const ResearchGroup = () => {
       setExpandedFaculty(null);
     } else {
       setExpandedFaculty(index);
-      // Fetch publications if not already loaded
       if (!publications[faculty[index].arxivName]) {
         fetchArxivPublications(faculty[index].arxivName);
       }
     }
-  };
-
-  const faculty = [
-    {
-      name: "Prof. Amruta Mishra",
-      area: "Physics of strongly interacting matter",
-      website: "https://web.iitd.ac.in/~amruta/",
-      description: "Research focuses on medium modifications of hadron properties at high temperatures and densities, relevant to neutron star phenomenology and heavy ion collision experiments.",
-      arxivName: "Mishra_A",
-      group: {
-        phd: ["PhD Scholar 1", "PhD Scholar 2"],
-        postdocs: [],
-      }
-    },
-    {
-      name: "Prof. Pradipta Ghosh",
-      area: "Beyond Standard Model phenomenology",
-      website: "https://web.iitd.ac.in/~tphyspg/",
-      description: "Research in Supersymmetric Models, R-parity violation, Neutrino physics, Electroweak Phase Transition and Gravitational Waves, Collider, Dark Matter, Charged Lepton Flavour Violation",
-      arxivName: "Ghosh_P",
-      group: {
-        phd: ["PhD Student 1"],
-        postdocs: ["Postdoc 1"],
-      }
-    },
-    {
-      name: "Prof. Tobias Toll",
-      area: "Strong force phenomenology",
-      website: "https://inspirehep.net/authors/1032510",
-      description: "Research focuses on strong force phenomenology and Monte Carlo Event Generators, particularly processes sensitive to high gluon densities like Exclusive Vector Meson production.",
-      arxivName: "Toll_T",
-      group: {
-        phd: ["PhD Scholar 1", "PhD Scholar 2"],
-        postdocs: [],
-      }
-    },
-    {
-      name: "Prof. Suprit Singh",
-      area: "Quantum Fields in Curved Spacetimes",
-      website: "https://supritsinghlab.github.io/",
-      description: "Research in Quantum Fields in Curved Spacetimes, Quantum-to-Classical Transition and Decoherence and Gravitational Quantum Mechanics.",
-      arxivName: "Singh_S",
-      group: {
-        phd: [],
-        postdocs: [],
-      }
-    },
-    {
-      name: "Prof. Tarun Sharma",
-      area: "String Theory",
-      website: "https://inspirehep.net/authors/1077841",
-      description: "Research in Chern Simons theories & Anyonic statistics, AdS-CFT, Higher Spin gauge theories, Fluid dynamics & gravity, Supersymmetry, String theory.",
-      arxivName: "Sharma_T",
-      group: {
-        phd: [],
-        postdocs: [],
-      }
-    },
-    {
-      name: "Prof. Abhishek M. Iyer",
-      area: "QCD and Composite Dynamics",
-      website: "https://inspirehep.net/authors/1272471",
-      description: "Research in QCD/Composite dynamics, Physics of Kaons and ML for particle physics and beyond.",
-      arxivName: "Iyer_A",
-      group: {
-        phd: [],
-        postdocs: [],
-      }
-    },
-    {
-      name: "Prof. Sarthak Parikh",
-      area: "Theoretical High Energy Physics",
-      website: "https://web.iitd.ac.in/~sarthak/",
-      description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
-      arxivName: "parikh_s_1",
-      group: {
-        phd: [],
-        postdocs: [],
-      }
-    },
-  ];
-
-  // Rest of the existing functions...
-
-  const renderPublications = (facultyMember, limit = null) => {
-    const facultyPubs = publications[facultyMember.arxivName];
-    
-    if (loading[facultyMember.arxivName]) {
-      return <p className="text-gray-500 italic">Loading publications...</p>;
-    }
-    
-    if (!facultyPubs || facultyPubs.length === 0) {
-      return <p className="text-gray-500 italic">No publications found</p>;
-    }
-
-    const filteredPubs = facultyPubs
-      .filter(pub => yearFilter === 'all' || pub.year.toString() === yearFilter);
-    
-    const displayPubs = limit ? filteredPubs.slice(0, limit) : filteredPubs;
-
-    return (
-      <div className="space-y-4">
-        {displayPubs.map(pub => (
-          <div key={pub.arxivId} className="p-4 border rounded">
-            <h4 className="font-semibold">
-              <a href={pub.url} target="_blank" rel="noopener noreferrer" 
-                 className="text-blue-600 hover:text-blue-800">
-                {pub.title}
-              </a>
-            </h4>
-            <p className="text-gray-600 mt-2">{pub.abstract.substring(0, 200)}...</p>
-            <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} ({pub.year})</p>
-          </div>
-        ))}
-        {limit && filteredPubs.length > limit && !showAllPublications && (
-          <button 
-            onClick={() => setShowAllPublications(true)}
-            className="mt-4 text-blue-600 hover:text-blue-800"
-          >
-            Show More Publications...
-          </button>
-        )}
-      </div>
-    );
-  };
-
-  const researchAreas = [
-    "Strongly Interacting Matter",
-    "Beyond Standard Model",
-    "Strong Force Phenomenology",
-    "Quantum Fields in Curved Spacetimes",
-    "String Theory",
-    "QCD and Composite Dynamics",
-    "Theoretical High Energy Physics"
-  ];
-
-  const getFacultyByArea = (area) => {
-    return faculty.filter(f => f.area.toLowerCase().includes(area.toLowerCase()));
   };
 
   const filteredFaculty = faculty.filter(f => 
@@ -229,6 +233,10 @@ const ResearchGroup = () => {
      f.area.toLowerCase().includes(searchTerm.toLowerCase())) &&
     (selectedFilter === 'all' || f.area.includes(selectedFilter))
   );
+
+  const getFacultyByArea = (area) => {
+    return faculty.filter(f => f.area.toLowerCase().includes(area.toLowerCase()));
+  };
 
   const renderFacultyCard = (f, index) => (
     <Card key={f.name} className="overflow-hidden">
@@ -294,6 +302,149 @@ const ResearchGroup = () => {
     </Card>
   );
 
+  const renderMembers = () => {
+    const renderMemberList = (memberList, type) => (
+      <div className="space-y-4">
+        {memberList.map((member, index) => (
+          <div key={`${member.name}-${index}`} className="p-4 bg-white rounded-lg shadow">
+            <h4 className="font-semibold text-lg">{member.name}</h4>
+            {member.advisor && (
+              <p className="text-gray-600">Advisor: {member.advisor}</p>
+            )}
+            <p className="text-gray-600">Year: {member.year}</p>
+            {member.research && (
+              <p className="text-gray-600">Research: {member.research}</p>
+            )}
+            {member.project && (
+              <p className="text-gray-600">Project: {member.project}</p>
+            )}
+            {member.thesis && (
+              <p className="text-gray-600">Thesis: {member.thesis}</p>
+            )}
+            {member.current && (
+              <p className="text-gray-600">Current Position: {member.current}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    );
+
+    return (
+      <div className="space-y-8">
+        <div className="flex justify-center space-x-4 mb-6">
+          <button
+            className={`px-4 py-2 rounded ${expandedMemberCategory === 'current' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+            onClick={() => setExpandedMemberCategory('current')}
+          >
+            Current Members
+          </button>
+          <button
+            className={`px-4 py-2 rounded ${expandedMemberCategory === 'alumni' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+            onClick={() => setExpandedMemberCategory('alumni')}
+          >
+            Alumni
+          </button>
+        </div>
+
+        {expandedMemberCategory === 'current' ? (
+          <>
+            <Card>
+              <CardHeader>
+                <CardTitle>Current Members</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Postdoctoral Researchers</h3>
+                    {renderMemberList(members.current.postdoc, 'postdoc')}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">PhD Students</h3>
+                    {renderMemberList(members.current.phd, 'phd')}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">MSc Students</h3>
+                    {renderMemberList(members.current.msc, 'msc')}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Undergraduate Students</h3>
+                    {renderMemberList(members.current.undergraduate, 'undergraduate')}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </>
+        ) : (
+          <>
+            <Card>
+              <CardHeader>
+                <CardTitle>Alumni</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">PhD Alumni</h3>
+                    {renderMemberList(members.alumni.phd, 'phd')}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">MSc Alumni</h3>
+                    {renderMemberList(members.alumni.msc, 'msc')}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Undergraduate Alumni</h3>
+                    {renderMemberList(members.alumni.undergraduate, 'undergraduate')}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </>
+        )}
+      </div>
+    );
+  };
+
+  const renderPublications = (facultyMember, limit = null) => {
+    const facultyPubs = publications[facultyMember.arxivName];
+    
+    if (loading[facultyMember.arxivName]) {
+      return <p className="text-gray-500 italic">Loading publications...</p>;
+    }
+    
+    if (!facultyPubs || facultyPubs.length === 0) {
+      return <p className="text-gray-500 italic">No publications found</p>;
+    }
+
+    const filteredPubs = facultyPubs
+      .filter(pub => yearFilter === 'all' || pub.year.toString() === yearFilter);
+    
+    const displayPubs = limit ? filteredPubs.slice(0, limit) : filteredPubs;
+
+    return (
+      <div className="space-y-4">
+        {displayPubs.map(pub => (
+          <div key={pub.arxivId} className="p-4 border rounded">
+            <h4 className="font-semibold">
+              <a href={pub.url} target="_blank" rel="noopener noreferrer" 
+                 className="text-blue-600 hover:text-blue-800">
+                {pub.title}
+              </a>
+            </h4>
+            <p className="text-gray-600 mt-2">{pub.abstract.substring(0, 200)}...</p>
+            <p className="text-gray-500 mt-2">arXiv:{pub.arxivId} ({pub.year})</p>
+          </div>
+        ))}
+        {limit && filteredPubs.length > limit && !showAllPublications && (
+          <button 
+            onClick={() => setShowAllPublications(true)}
+            className="mt-4 text-blue-600 hover:text-blue-800"
+          >
+            Show More Publications...
+          </button>
+        )}
+      </div>
+    );
+  };
+
   const renderResearchAreas = () => (
     <Card>
       <CardHeader>
@@ -327,7 +478,6 @@ const ResearchGroup = () => {
     </Card>
   );
 
-  // Modify the renderPublicationsTab to show only 5 publications initially
   const renderPublicationsTab = () => {
     const allPublications = Object.entries(publications).flatMap(([authorName, pubs]) => {
       const facultyMember = faculty.find(f => f.arxivName === authorName);
@@ -347,7 +497,18 @@ const ResearchGroup = () => {
 
     return (
       <div className="space-y-4">
-        {/* ... rest of the code remains the same ... */}
+        <div className="mb-4 flex justify-end">
+          <select 
+            className="border rounded-lg px-4 py-2"
+            value={yearFilter}
+            onChange={(e) => setYearFilter(e.target.value)}
+          >
+            <option value="all">All Years</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+        
         <Card>
           <CardHeader>
             <CardTitle>Publications</CardTitle>
@@ -376,13 +537,27 @@ const ResearchGroup = () => {
             )}
           </CardContent>
         </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Recent Talks</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {talks.map(talk => (
+              <div key={talk.title} className="mb-4 p-4 border rounded">
+                <h4 className="font-semibold">{talk.title}</h4>
+                <p className="text-gray-600">{talk.speaker}</p>
+                <p className="text-gray-500">{new Date(talk.date).toLocaleDateString()}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
       </div>
     );
   };
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      {/* Rest of the component structure remains the same */}
       <div className="mb-8 text-center">
         <h1 className="text-4xl font-bold mb-2">High Energy Physics Research Group</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -396,6 +571,12 @@ const ResearchGroup = () => {
           onClick={() => setActiveTab('overview')}
         >
           Overview
+        </button>
+        <button 
+          className={`px-4 py-2 rounded ${activeTab === 'members' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveTab('members')}
+        >
+          Members
         </button>
         <button 
           className={`px-4 py-2 rounded ${activeTab === 'faculty' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
@@ -419,12 +600,30 @@ const ResearchGroup = () => {
                 <CardTitle>About High Energy Physics</CardTitle>
               </CardHeader>
               <CardContent>
-                {/* ... content remains the same ... */}
+                <p className="text-gray-600 mb-4">
+                  High Energy Physics (HEP) probes the most elementary units of matter and investigates fundamental interactions 
+                  among basic constituents. Our research is founded on the Standard Model (SM) of particle physics, which includes 
+                  elementary entities like leptons, quarks, photons, W & Z bosons, gluons, and the Higgs boson.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  The Standard Model has been remarkably successful in understanding nature, earning more than twenty Nobel prizes. 
+                  However, there are still theoretical challenges and experimental anomalies that require investigation beyond the 
+                  Standard Model, including:
+                </p>
+                <ul className="list-disc ml-6 text-gray-600 mb-4">
+                  <li>Hierarchy problems</li>
+                  <li>Unification of fundamental interactions including gravity</li>
+                  <li>Non-zero neutrino masses and mixing</li>
+                  <li>Dark matter evidence from galaxy rotation curves</li>
+                  <li>Matter-antimatter asymmetry of the Universe</li>
+                </ul>
               </CardContent>
             </Card>
             {renderResearchAreas()}
           </div>
         )}
+
+        {activeTab === 'members' && renderMembers()}
 
         {activeTab === 'faculty' && (
           <>
