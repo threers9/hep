@@ -523,8 +523,8 @@ const renderSeminars = () => (
           <div key={talk.title} className="mb-4 p-4 border rounded">
             <h4 className="font-semibold">{talk.title}</h4>
             <p className="text-gray-600">{talk.speaker}</p>
-            <p className="text-gray-500">{new Date(talk.date).toLocaleDateString('en-GB')}</p>
             <p className="text-gray-600">{talk.area}</p>
+            <p className="text-gray-500">{new Date(talk.date).toLocaleDateString('en-GB')}</p>
           </div>
         ))}
       </CardContent>
