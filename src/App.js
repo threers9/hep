@@ -229,8 +229,8 @@ useEffect(() => {
         </CardHeader>
         <CardContent>
           <p className="text-gray-600 mb-4">
-            High Energy Physics (HEP) probes the most elementary units of matter and investigates fundamental interactions 
-            among basic constituents. Our research is founded on the Standard Model (SM) of particle physics, which includes 
+            High Energy Physics probes the most elementary units of matter and investigates fundamental interactions 
+            among basic constituents. Our research is founded on the Standard Model of particle physics, which includes 
             elementary entities like leptons, quarks, photons, W & Z bosons, gluons, and the Higgs boson.
           </p>
           <p className="text-gray-600 mb-4">
@@ -239,8 +239,8 @@ useEffect(() => {
             Standard Model, including:
           </p>
           <ul className="list-disc ml-6 text-gray-600 mb-4">
+            <li>Unification of fundamental interactions including gravity aka a quantum theory of gravity</li>
             <li>Hierarchy problems</li>
-            <li>Unification of fundamental interactions including gravity</li>
             <li>Non-zero neutrino masses and mixing</li>
             <li>Dark matter evidence from galaxy rotation curves</li>
             <li>Matter-antimatter asymmetry of the Universe</li>
