@@ -3,8 +3,8 @@
     current: {
       postdoc: [
         { name: "Harkirat Singh Sahota", year: "2024-present", research: "Quantum Fields in Curved Spacetimes, Quantum Information" },
-        { name: "Shagun Kaushal", year: "2024-present", research: "Quantum Fields in Curved Spacetimes, Quantum Information" },
-        { name: "Postdoc 1", year: "2023-present", research: "Beyond Standard Model" }
+        { name: "Shagun Kaushal", year: "2023-present", research: "Quantum Fields in Curved Spacetimes, Quantum Information" },
+        { name: "Nahid Vasim", year: "2024-present", research: "QCD" }
       ],
       phd: [
         { name: "PhD Scholar 1", advisor: "Prof. Amruta Mishra", year: "2022-present", research: "Strongly Interacting Matter" },
