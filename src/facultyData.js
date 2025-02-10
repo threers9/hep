@@ -81,7 +81,7 @@ export const faculty = [
     },
     "Beyond Standard Model & Particle Physics": {
       description: "Research in supersymmetry, dark matter, and particle phenomenology",
-      faculty: ["Prof. Abhishek M. Iyer", "Prof. Pradipta Ghosh"]
+      faculty: ["Prof. Pradipta Ghosh", "Prof. Abhishek M. Iyer"]
     },
     "Quantum Fields & Gravity": {
       description: "Research in quantum fields, curved spacetimes, and quantum gravity",
