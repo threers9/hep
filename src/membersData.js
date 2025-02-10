@@ -8,24 +8,24 @@
       ],
       phd: [
         { name: "PhD Scholar 1", advisor: "Prof. Amruta Mishra", year: "2022-present", research: "Strongly Interacting Matter" },
-        { name: "PhD Scholar 2", advisor: "Prof. Amruta Mishra", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Amruta Mishra", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Tobias Toll", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Tobias Toll", year: "2021-present", research: "Hadron Properties" },
+        { name: "Manju Soni", advisor: "Prof. Amruta Mishra", year: "2019-present", research: "" },
+        { name: "Arpita Mondal", advisor: "Prof. Amruta Mishra", year: "2019-present", research: "" },
         { name: "Pankaj Borah", advisor: "Prof. Pradipta Ghosh", year: "2019-present", research: "Dark Matter, Phase Transition, Gravitational Waves" },
         { name: "Shivam Burman", advisor: "Prof. Suprit Singh", year: "2021-present", research: "Extragalactic Astrophysics" },
-        { name: "PhD Scholar 2", advisor: "Prof. Abhishek Iyer", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Abhishek Iyer", year: "2021-present", research: "Hadron Properties" },
-        { name: "PhD Scholar 2", advisor: "Prof. Tarun Sharma", year: "2021-present", research: "Hadron Properties" },
+        { name: "Abhishek Kumar Singh", advisor: "Prof. Abhishek Iyer", year: "2021-present", research: "Strongly coupled theories" },
+        { name: "Tejaswini Thallapalli", advisor: "Prof. Abhishek Iyer", year: "2021-present", research: "Applications of ML for particle physics data" },
+        { name: "Vaidehi S Nattoja", advisor: "Prof. Tobias Toll", year: "2022-present", research: "" },
         { name: "Arkapal Mondal", advisor: "Prof. Sarthak Parikh", year: "2022-present", research: "AdS/CFT" },
         { name: "D Chirag", advisor: "Prof. Sarthak Parikh", year: "2024-present", research: "QFT" },
+        { name: "Lingaraj Rout", advisor: "Prof. Tarun Sharma", year: "2024-present", research: "Non relativistic supersymmetric theories" },
+        { name: "Bhakta Naik", advisor: "Prof. Tobias Toll", year: "2024-present", research: "" },
         { name: "Rishav Saha", advisor: "Prof. Sarthak Parikh", year: "2024-present", research: "QFT" }
       ]
     },
     alumni: {
       phd: [
-        { name: "PhD Alumni 1", advisor: "Prof. Amruta Mishra", year: "2018-2023", thesis: "Properties of Hadrons in Strong Fields", current: "Postdoc at TIFR" },
-        { name: "PhD Alumni 2", advisor: "Prof. Pradipta Ghosh", year: "2017-2022", thesis: "Dark Matter Detection", current: "Faculty at IISER" }
+        { name: "Arjun Kumar", advisor: "Prof. Tobias Toll", year: "2018-2023", thesis: "", current: "" },
+        { name: "PhD Alumni 2", advisor: "Prof. Amruta Mishra", year: "2017-2022", thesis: "", current: "" }
       ]
     }
   };
