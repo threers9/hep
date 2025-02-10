@@ -81,7 +81,7 @@ export const faculty = [
     },
     "Beyond Standard Model & Particle Physics": {
       description: "Research in supersymmetry, dark matter, and particle phenomenology",
-      faculty: ["Prof. Pradipta Ghosh"]
+      faculty: ["Prof. Abhishek M. Iyer", "Prof. Pradipta Ghosh"]
     },
     "Quantum Fields & Gravity": {
       description: "Research in quantum fields, curved spacetimes, and quantum gravity",
@@ -97,6 +97,6 @@ export const faculty = [
     },
     "AI/ML in Particle Physics": {
       description: "Research in applications of machine learning to particle physics",
-      faculty: ["Prof. Abhishek M. Iyer"]
+      faculty: ["Prof. Abhishek M. Iyer", "Prof. Tobias Toll"]
     }
   };
