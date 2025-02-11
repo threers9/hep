@@ -23,6 +23,10 @@
       ]
     },
     alumni: {
+      postdoc: [
+        { name: "P. C. Raje Bhageerathi", year: "2007-2010", research: "Quantum Fields in Curved Spacetimes, Quantum Information" },
+        { name: "Haresh Raval", year: "2018-2021", research: "Quantum Fields in Curved Spacetimes, Quantum Information" }
+      ],
       phd: [
         { name: "Arvind Kumar", advisor: "Prof. Amruta Mishra", year: "Jul 2007-Jun 2011", thesis: "In-medium properties of hadrons", current: "" },
         { name: "Divakar Pathak", advisor: "Prof. Amruta Mishra", year: "Jul 2011-Oct 2025", thesis: "In medium properties of hadrons in a chiral effective model", current: "" },
