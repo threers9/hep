@@ -380,7 +380,7 @@ useEffect(() => {
                   ))}
                 </div>
               </div>
-            </div>
+
         
             <div>
               <h3 className="text-xl font-semibold mb-3">PhD Alumni</h3>
@@ -407,6 +407,7 @@ useEffect(() => {
                 ))}
               </div>
             </div>
+          </div>
           </CardContent>
         </Card>
       )}
