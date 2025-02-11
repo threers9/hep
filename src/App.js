@@ -264,7 +264,7 @@ useEffect(() => {
 
   const renderMembers = () => (
     <div className="space-y-8">
-      <div className="space-y-4 mb-6">
+     <div className="space-y-4 mb-6">
         <div className="flex justify-center space-x-4">
           <button
             className={`px-4 py-2 rounded ${expandedMemberCategory === 'current' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
@@ -282,7 +282,12 @@ useEffect(() => {
         <div className="flex justify-center">
           <button
             className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
-            onClick={() => setForceExpandAll(!forceExpandAll)}
+            onClick={() => {
+              setForceExpandAll(!forceExpandAll);
+              if (!forceExpandAll === false) {  // If we're collapsing
+                setExpandedMember(null);  // Reset individual expansions
+              }
+            }}
           >
             {forceExpandAll ? 'Collapse All' : 'Expand All'}
           </button>
