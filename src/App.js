@@ -276,7 +276,7 @@ useEffect(() => {
             className={`px-4 py-2 rounded ${expandedMemberCategory === 'alumni' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
             onClick={() => setExpandedMemberCategory('alumni')}
           >
-            Alumni
+            Past Members
           </button>
           <button
             className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
@@ -389,13 +389,13 @@ useEffect(() => {
                   <div
                     key={`${member.name}-${index}`}
                     className="border rounded-lg cursor-pointer hover:bg-gray-50"
-                    onClick={() => setExpandedMember(expandedMember === `alumni-${index}` ? null : `alumni-${index}`)}
+                    onClick={() => setExpandedMember(expandedMember === `phd-${index}` ? null : `phd-${index}`)}
                   >
                     <div className="p-3 flex justify-between items-center">
                       <span className="font-medium">{member.name}</span>
-                      {expandedMember === `alumni-${index}` ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                      {expandedMember === `phd-${index}` ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                     </div>
-                    {(forceExpandAll || expandedMember === `alumni-${index}`) && (
+                    {(forceExpandAll || expandedMember === `phd-${index}`) && (
                       <div className="px-3 pb-3 border-t">
                         <p className="text-gray-600">Advisor: {member.advisor}</p>
                         <p className="text-gray-600">Year: {member.year}</p>
