@@ -6,7 +6,7 @@ export const seminarData = [
             area: "Stony Brook University, USA"
           },
           {
-            title: "Journal club: TBA",
+            title: "Journal club: Ergodicity in quantum dynamics",
             speaker: "Amin Nizami",
             date: "2025-02-10",
             area: "Ashoka University"
@@ -18,7 +18,7 @@ export const seminarData = [
             area: "Sungkyunkwan University, South Korea"
           },
           {
-            title: "Journal club: Feynman diagrams live in conformal families",
+            title: "Feynman diagrams live in conformal families",
             speaker: "Siddharth Prabhu",
             date: "2025-01-27",
             area: "TIFR, Mumbai"
