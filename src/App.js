@@ -353,7 +353,7 @@ useEffect(() => {
       ) : (
         <Card>
           <CardHeader>
-            <CardTitle>Alumni</CardTitle>
+            <CardTitle>Past Members</CardTitle>
           </CardHeader>
             <CardContent>
             <div className="space-y-6">
