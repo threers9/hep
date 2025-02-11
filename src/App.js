@@ -360,7 +360,7 @@ useEffect(() => {
           <CardContent>
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3">Postdoctoral Researchers</h3>
+                <h3 className="text-xl font-semibold mb-3">Postdoc Alumni</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {members.alumni.postdoc.map((member, index) => (
                     <div
@@ -411,7 +411,7 @@ useEffect(() => {
           </CardContent>
         </Card>
       )}
-    </div>
+   // </div>
   );
 
 // Function to render the Seminars tab
