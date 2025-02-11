@@ -349,7 +349,7 @@ useEffect(() => {
                   ))}
                 </div>
               </div>
-            //</div>
+            </div>
           </CardContent>
         </Card>
       ) : (
@@ -357,31 +357,7 @@ useEffect(() => {
           <CardHeader>
             <CardTitle>Alumni</CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Postdoc Alumni</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {members.alumni.postdoc.map((member, index) => (
-                    <div
-                      key={`${member.name}-${index}`}
-                      className="border rounded-lg cursor-pointer hover:bg-gray-50"
-                      onClick={() => setExpandedMember(expandedMember === `postdoc-${index}` ? null : `postdoc-${index}`)}
-                    >
-                      <div className="p-3 flex justify-between items-center">
-                        <span className="font-medium">{member.name}</span>
-                        {expandedMember === `postdoc-${index}` ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-                      </div>
-                      {(forceExpandAll || expandedMember === `postdoc-${index}`) && (
-                        <div className="px-3 pb-3 border-t">
-                          <p className="text-gray-600">Year: {member.year}</p>
-                          <p className="text-gray-600">Research: {member.research}</p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+         
                   
             <div>
               <h3 className="text-xl font-semibold mb-3">PhD Alumni</h3>
