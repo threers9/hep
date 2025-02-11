@@ -31,7 +31,6 @@ const ResearchGroup = () => {
   const [loading, setLoading] = useState({});
   const [showAllPublications, setShowAllPublications] = useState(false);
   const [expandedMemberCategory, setExpandedMemberCategory] = useState('current');
-//  const [expandedMember, setExpandedMember] = useState(null);
     // Add this state for pagination
   const [currentPage, setCurrentPage] = useState(1);
   const publicationsPerPage = 20;
@@ -642,7 +641,9 @@ const renderPositions = () => (
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold mb-2">High Energy Physics and Quantum Gravity Group at IIT Delhi</h1>
+        <h1 className="text-4xl font-bold mb-2">High Energy Physics and Quantum Gravity Group at <a 
+          href="https://physics.iitd.ac.in/"
+          target="_blank"IIT Delhi</a></h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Exploring the fundamental constituents of matter in our Universe and their interactions
         </p>
