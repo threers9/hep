@@ -358,7 +358,6 @@ useEffect(() => {
             <CardTitle>Alumni</CardTitle>
           </CardHeader>
           <CardContent>
-          <CardContent>
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold mb-3">Postdoctoral Researchers</h3>
