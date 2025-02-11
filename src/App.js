@@ -31,7 +31,7 @@ const ResearchGroup = () => {
   const [loading, setLoading] = useState({});
   const [showAllPublications, setShowAllPublications] = useState(false);
   const [expandedMemberCategory, setExpandedMemberCategory] = useState('current');
-  const [expandedMember, setExpandedMember] = useState(null);
+//  const [expandedMember, setExpandedMember] = useState(null);
     // Add this state for pagination
   const [currentPage, setCurrentPage] = useState(1);
   const publicationsPerPage = 20;
