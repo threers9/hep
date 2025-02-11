@@ -36,6 +36,7 @@ const ResearchGroup = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const publicationsPerPage = 20;
   const [searchQuery, setSearchQuery] = useState('');
+  const [forceExpandAll, setForceExpandAll] = useState(false);
 
   // Keep the original ArXiv fetching functionality
 const fetchArxivPublications = async (authorName) => {
@@ -262,19 +263,29 @@ useEffect(() => {
 
   const renderMembers = () => (
     <div className="space-y-8">
-      <div className="flex justify-center space-x-4 mb-6">
-        <button
-          className={`px-4 py-2 rounded ${expandedMemberCategory === 'current' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
-          onClick={() => setExpandedMemberCategory('current')}
-        >
-          Current Members
-        </button>
-        <button
-          className={`px-4 py-2 rounded ${expandedMemberCategory === 'alumni' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
-          onClick={() => setExpandedMemberCategory('alumni')}
-        >
-          Alumni
-        </button>
+      <div className="space-y-4 mb-6">
+        <div className="flex justify-center space-x-4">
+          <button
+            className={`px-4 py-2 rounded ${expandedMemberCategory === 'current' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+            onClick={() => setExpandedMemberCategory('current')}
+          >
+            Current Members
+          </button>
+          <button
+            className={`px-4 py-2 rounded ${expandedMemberCategory === 'alumni' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+            onClick={() => setExpandedMemberCategory('alumni')}
+          >
+            Alumni
+          </button>
+        </div>
+        <div className="flex justify-center">
+          <button
+            className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
+            onClick={() => setForceExpandAll(!forceExpandAll)}
+          >
+            {forceExpandAll ? 'Collapse All' : 'Expand All'}
+          </button>
+        </div>
       </div>
 
       {expandedMemberCategory === 'current' ? (
