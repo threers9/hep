@@ -37,6 +37,7 @@ const ResearchGroup = () => {
   const publicationsPerPage = 20;
   const [searchQuery, setSearchQuery] = useState('');
   const [forceExpandAll, setForceExpandAll] = useState(false);
+  const [expandedMember, setExpandedMember] = useState(null);
 
   // Keep the original ArXiv fetching functionality
 const fetchArxivPublications = async (authorName) => {
@@ -308,7 +309,7 @@ useEffect(() => {
                         <span className="font-medium">{member.name}</span>
                         {expandedMember === `postdoc-${index}` ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                       </div>
-                      {expandedMember === `postdoc-${index}` && (
+                      {(forceExpandAll || expandedMember === `postdoc-${index}`) && (
                         <div className="px-3 pb-3 border-t">
                           <p className="text-gray-600">Year: {member.year}</p>
                           <p className="text-gray-600">Research: {member.research}</p>
@@ -332,7 +333,7 @@ useEffect(() => {
                         <span className="font-medium">{member.name}</span>
                         {expandedMember === `phd-${index}` ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                       </div>
-                      {expandedMember === `phd-${index}` && (
+                      {(forceExpandAll || expandedMember === `phd-${index}`) && (
                         <div className="px-3 pb-3 border-t">
                           <p className="text-gray-600">Advisor: {member.advisor}</p>
                           <p className="text-gray-600">Year: {member.year}</p>
