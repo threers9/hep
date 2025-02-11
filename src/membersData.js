@@ -18,14 +18,14 @@
         { name: "Arkapal Mondal", advisor: "Prof. Sarthak Parikh", year: "Jul 2022-present", research: "AdS/CFT" },
         { name: "D Chirag", advisor: "Prof. Sarthak Parikh", year: "Jul 2024-present", research: "QFT" },
         { name: "Lingaraj Rout", advisor: "Prof. Tarun Sharma", year: "Jul 2024-present", research: "Non relativistic supersymmetric theories" },
-        { name: "Bhakta Naik", advisor: "Prof. Tobias Toll", year: "2024-present", research: "Small-x diffraction phenomenology and event generation" },
+        { name: "Bhakta Naik", advisor: "Prof. Tobias Toll", year: "Dec 2024-present", research: "Small-x diffraction phenomenology and event generation" },
         { name: "Rishav Saha", advisor: "Prof. Sarthak Parikh", year: "Dec 2024-present", research: "QFT" }
       ]
     },
     alumni: {
       postdoc: [
-        { name: "P. C. Raje Bhageerathi", year: "2007-2010", research: "Quantum Fields in Curved Spacetimes, Quantum Information" },
-        { name: "Haresh Raval", year: "2018-2021", research: "Quantum Fields in Curved Spacetimes, Quantum Information" }
+        { name: "P. C. Raje Bhageerathi", year: "2007-2010", research: "" },
+        { name: "Haresh Raval", year: "2018-2021", research: "" }
       ],
       phd: [
         { name: "Arvind Kumar", advisor: "Prof. Amruta Mishra", year: "Jul 2007-Jun 2011", thesis: "In-medium properties of hadrons", current: "" },
