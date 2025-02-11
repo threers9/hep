@@ -407,11 +407,11 @@ useEffect(() => {
                   </div>
                 ))}
               </div>
-            </div>
+           // </div>
           </CardContent>
         </Card>
       )}
-   // </div>
+    </div>
   );
 
 // Function to render the Seminars tab
