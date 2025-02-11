@@ -25,7 +25,6 @@
     alumni: {
       postdoc: [
         { name: "P. C. Raje Bhageerathi", year: "2007-2010", research: "" },
-        { name: "Haresh Raval", year: "2018-2021", research: "" },
         { name: "Haresh Raval", year: "2018-2021", research: "" }
       ],
       phd: [
