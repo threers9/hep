@@ -138,7 +138,10 @@ useEffect(() => {
             <li>Dark matter evidence from galaxy rotation curves</li>
             <li>Matter-antimatter asymmetry of the Universe</li>
           </ul>
-        We, at the <a href="https://physics.iitd.ac.in/" target="_blank">Department of Physics</a>, IIT Delhi, tackle these questions and more.
+         <p className="text-gray-600 mb-4"> 
+          We, at the <a href="https://physics.iitd.ac.in/" target="_blank" className="text-blue-600 hover:text-blue-800">
+          Department of Physics</a>, IIT Delhi, tackle these questions and more.
+         </p>
         </CardContent>
       </Card>
       <Card>
