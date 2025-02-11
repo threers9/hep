@@ -358,7 +358,7 @@ useEffect(() => {
             <CardTitle>Alumni</CardTitle>
           </CardHeader>
             <CardContent>
-
+            <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold mb-3">Postdoc Alumni</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -382,6 +382,7 @@ useEffect(() => {
                   ))}
                 </div>
               </div>
+            </div>
         
             <div>
               <h3 className="text-xl font-semibold mb-3">PhD Alumni</h3>
