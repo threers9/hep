@@ -371,7 +371,7 @@ useEffect(() => {
                       <span className="font-medium">{member.name}</span>
                       {expandedMember === `alumni-${index}` ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                     </div>
-                    {expandedMember === `alumni-${index}` && (
+                    {(forceExpandAll || expandedMember === `alumni-${index}`) && (
                       <div className="px-3 pb-3 border-t">
                         <p className="text-gray-600">Advisor: {member.advisor}</p>
                         <p className="text-gray-600">Year: {member.year}</p>
