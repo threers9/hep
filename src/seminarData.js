@@ -1,5 +1,11 @@
 export const seminarData = [
           {
+            title: "Using Gravitational Waves to see the Early Universe",
+            speaker: "Rishav Roshan",
+            date: "2025-02-17",
+            area: "University of Southampton, UK"
+          },
+          {
             title: "QCD-Gravity double-copy in the Regge regime via shockwave collisions",
             speaker: "Himanshu Raj",
             date: "2025-02-12",
