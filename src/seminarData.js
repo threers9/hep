@@ -1,5 +1,11 @@
 export const seminarData = [
           {
+            title: "Light Nuclei Femtoscopy and Baryon Interactions at RHIC",
+            speaker: "Neha Shah",
+            date: "2025-03-19",
+            area: "IIT Patna"
+          },
+          {
             title: "Using Gravitational Waves to see the Early Universe",
             speaker: "Rishav Roshan",
             date: "2025-02-17",
