@@ -6,6 +6,12 @@ export const seminarData = [
             area: "IIT Patna"
           },
           {
+            title: "Quantum Computing and its Applications to Atoms and Molecules",
+            speaker: "Bhanu Pratap Das",
+            date: "2025-03-03",
+            area: "Centre for Quantum Engineering, Research and Education (TCG CREST), Kolkata and Department of Physics, Tokyo Institute of Technology (currently Institute of Science Tokyo), Japan"
+          },
+          {
             title: "Using Gravitational Waves to see the Early Universe",
             speaker: "Rishav Roshan",
             date: "2025-02-17",
