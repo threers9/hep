@@ -1,4 +1,10 @@
 export const seminarData = [
+         {
+            title: "Novel Applications of Power Over Fiber in the DUNE FD-VD Detector",
+            speaker: "Biswaranjan Behera",
+            date: "2025-04-07",
+            area: "South Dakota School of Mines and Technology, USA"
+          },  
           {
             title: "Light Nuclei Femtoscopy and Baryon Interactions at RHIC",
             speaker: "Neha Shah",
