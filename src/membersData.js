@@ -7,7 +7,6 @@
         { name: "Nahid Vasim", year: "2023-present", research: "QCD Theory at small-x" }
       ],
       phd: [
-        { name: "Manju Soni", advisor: "Prof. Amruta Mishra", year: "Jul 2019-present", research: "Meson properties under extreme conditions" },
         { name: "Arpita Mondal", advisor: "Prof. Amruta Mishra", year: "Jul 2019-present", research: "In-medium properties of strange and charm mesons" },
         { name: "Jaswant Singh", advisor: "Prof. Tobias Toll", year: "2019-present", research: " Small-x Diffraction and Machine Learning " },
         { name: "Pankaj Borah", advisor: "Prof. Pradipta Ghosh", year: "2019-present", research: "Dark Matter, Phase Transition, Gravitational Waves" },
