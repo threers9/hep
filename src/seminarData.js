@@ -1,5 +1,11 @@
 export const seminarData = [
          {
+            title: "Multipartite entanglement monotones",
+            speaker: "Abhijit Gadde",
+            date: "2025-06-06",
+            area: "TIFR Mumbai"
+          }, 
+         {
             title: "Novel Applications of Power Over Fiber in the DUNE FD-VD Detector",
             speaker: "Biswaranjan Behera",
             date: "2025-04-07",
