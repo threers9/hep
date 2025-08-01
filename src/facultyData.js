@@ -43,7 +43,7 @@ export const faculty = [
     {
       name: "Prof. Tarun Sharma",
       area: "String Theory",
-      website: "https://inspirehep.net/authors/1077841",
+      website: "https://sites.google.com/view/tarun-iitd",
       description: "Research in Chern Simons theories & Anyonic statistics, AdS-CFT, Higher Spin gauge theories, Fluid dynamics & gravity, Supersymmetry, String theory.",
       lastName: "Sharma",
       arxivName: "Sharma_Tarun",
