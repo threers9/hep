@@ -1,6 +1,6 @@
 export const seminarData = [
          {
-            title: "Monopoles, Dirac strings, and Generalized Symmetries",
+            title: "Journal club: Monopoles, Dirac strings, and Generalized Symmetries",
             speaker: "Madhusudhan Raman",
             date: "2025-08-19",
             area: "Delhi University"
