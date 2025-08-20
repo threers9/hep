@@ -1,5 +1,17 @@
 export const seminarData = [
          {
+            title: "Monopoles, Dirac strings, and Generalized Symmetries",
+            speaker: "Madhusudhan Raman",
+            date: "2025-08-19",
+            area: "Delhi University"
+          }, 
+         {
+            title: "Some aspects of interplay between gravity and quantum information",
+            speaker: "Manish Ramchander",
+            date: "2025-08-01",
+            area: "IMSc Chennai"
+          }, 
+         {
             title: "Multipartite entanglement monotones",
             speaker: "Abhijit Gadde",
             date: "2025-06-06",
