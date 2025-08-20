@@ -34,7 +34,7 @@ export const faculty = [
       name: "Prof. Sarthak Parikh",
       area: "Theoretical High Energy Physics",
       website: "https://web.iitd.ac.in/~sarthak/",
-      description: "Research in Theoretical and Mathematical High Energy Physics: Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime, Quantum Computation and Quantum Information Theory.",
+      description: "Research in Theoretical and Mathematical Physics: Quantum Computation and Quantum Information Theory, Gauge/Gravity Duality (AdS/CFT correspondence), Conformal Field Theories, Quantum Gravity, Discrete Models of Spacetime.",
       lastName: "Parikh",
       arxivName: "Parikh_Sarthak",
       email: "sarthak at physics.iitd.ac.in",
