@@ -2,7 +2,7 @@ export const seminarData = [
          {
             title: "Is the Scattering Amplitude Analytic in a Field Theory With a Compact Spatial Coordinate?",
             speaker: "Jnan Maharana",
-            date: "2025-08-28",
+            date: "2025-09-03",
             area: "IOP Bhubaneswar"
           }, 
          {
