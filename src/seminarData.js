@@ -1,5 +1,17 @@
 export const seminarData = [
          {
+            title: "Is the Scattering Amplitude Analytic in a Field Theory With a Compact Spatial Coordinate?",
+            speaker: "Jnan Maharana",
+            date: "2025-08-28",
+            area: "IOP Bhubaneswar"
+          }, 
+         {
+            title: "Journal club: Conformal field theories in a magnetic field",
+            speaker: "Tarun Sharma",
+            date: "2025-08-26",
+            area: "IIT Delhi"
+          }, 
+         {
             title: "Journal club: Monopoles, Dirac strings, and Generalized Symmetries",
             speaker: "Madhusudhan Raman",
             date: "2025-08-19",
