@@ -28,7 +28,7 @@
         { name: "Haresh Raval", year: "2018-2021", research: "" }
       ],
       phd: [
-        { name: "Pankaj Borah", advisor: "Prof. Pradipta Ghosh", year: "Jul 2019- Jun 2025", research: "Dark Matter, Phase Transition, Gravitational Waves" },
+        { name: "Pankaj Borah", advisor: "Prof. Pradipta Ghosh", year: "Jul 2019- Jun 2025", thesis: "Dark Matter, Phase Transition, Gravitational Waves", current: "" },
         { name: "Pallabi Parui", advisor: "Prof. Amruta Mishra", year: "Jul 2018-Apr 2024", thesis: "Spectral properties of hadrons in hot and dense matter", current: "" },
         { name: "Sourodeep De", advisor: "Prof. Amruta Mishra", year: "Jul 2018-Apr 2024", thesis: "Masses and Decay widths of Heavy flavour meson", current: "" },
         { name: "Ankit Kumar", advisor: "Prof. Amruta Mishra", year: "Jul 2018-Apr 2024", thesis: "Heavy Quarkonia under extreme conditions", current: "" },
