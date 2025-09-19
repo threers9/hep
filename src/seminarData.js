@@ -1,4 +1,22 @@
 export const seminarData = [
+        {
+            title: "Aspects of black holes in AdS spacetimes",
+            speaker: "Kaustubh Singhi",
+            date: "2025-09-26",
+            area: "ICTS Bengaluru"
+          },          
+         {
+            title: "Journal club: T-duality symmetric formulation of String Theory from the worldsheet perspective",
+            speaker: "Franco Pezzella",
+            date: "2025-09-23",
+            area: "INFN Napoli"
+          },
+         {
+            title: "Hawking radiation from acoustic black holes in relativistic heavy ion collisions and in hydrodynamical flow of electrons",
+            speaker: "Ajit M. Srivastava",
+            date: "2025-09-18",
+            area: "IOP Bhubaneswar"
+          }, 
          {
             title: "Is the Scattering Amplitude Analytic in a Field Theory With a Compact Spatial Coordinate?",
             speaker: "Jnan Maharana",
