@@ -1,5 +1,11 @@
 export const seminarData = [
         {
+            title: "Doubly Separable Spacetimes and Symmetry Constraints on their Self-Gravitating Matter Content",
+            speaker: "Prashant Kocherlakota",
+            date: "2025-10-09",
+            area: "Harvard University"
+          },   
+        {
             title: "Aspects of black holes in AdS spacetimes",
             speaker: "Kaustubh Singhi",
             date: "2025-09-26",
