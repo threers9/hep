@@ -1,5 +1,11 @@
 export const seminarData = [
         {
+            title: "Charm susceptibilities as a probe of deconfinement from lattice QCD",
+            speaker: "Shipaz Sharma",
+            date: "2025-11-25",
+            area: "Technische Universität München"
+          },  
+        {
             title: "Doubly Separable Spacetimes and Symmetry Constraints on their Self-Gravitating Matter Content",
             speaker: "Prashant Kocherlakota",
             date: "2025-10-09",
