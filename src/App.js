@@ -38,64 +38,14 @@ const ResearchGroup = () => {
   const [forceExpandAll, setForceExpandAll] = useState(false);
   const [expandedMember, setExpandedMember] = useState(null);
 
-//   // Keep the original ArXiv fetching functionality
-// const fetchArxivPublications = async (authorName) => {
-//   try {
-//     setLoading(prev => ({ ...prev, [authorName]: true }));
-    
-//     const baseUrl = 'https://export.arxiv.org/api/query';
-//     // Special case for Tarun Sharma - only search in hep-th
-// // Special cases for specific faculty members
-//     let query;
-//     if (authorName === 'Sharma_Tarun') {
-//       query = `search_query=au:${authorName}+AND+cat:hep-th&sortBy=submittedDate&sortOrder=descending&max_results=20`;
-//     } else if (authorName === 'Ghosh_Pradipta') {
-//       query = `search_query=au:${authorName}+AND+cat:hep-ph&sortBy=submittedDate&sortOrder=descending&max_results=20`;
-//     } else {
-//       query = `search_query=au:${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=20`;
-//     }
-//     const response = await fetch(`${baseUrl}?${query}`);
-//     const text = await response.text();
-    
-//     const parser = new DOMParser();
-//     const xmlDoc = parser.parseFromString(text, "text/xml");
-//     const entries = xmlDoc.getElementsByTagName("entry");
-    
-//     const papers = Array.from(entries).map(entry => {
-//       const title = entry.getElementsByTagName("title")[0]?.textContent || "";
-//       const published = entry.getElementsByTagName("published")[0]?.textContent || "";
-//       const abstract = entry.getElementsByTagName("summary")[0]?.textContent || "";
-//       const arxivId = entry.getElementsByTagName("id")[0]?.textContent?.split("/").pop() || "";
-      
-//       return {
-//         title: title.replace(/\n/g, " ").trim(),
-//         year: new Date(published).getFullYear(),
-//         abstract: abstract.replace(/\n/g, " ").trim(),
-//         arxivId,
-//         url: `https://arxiv.org/abs/${arxivId}`
-//       };
-//     });
-
-//     setPublications(prev => ({
-//       ...prev,
-//       [authorName]: papers
-//     }));
-//   } catch (error) {
-//     console.error(`Error fetching publications for ${authorName}:`, error);
-//     setPublications(prev => ({
-//       ...prev,
-//       [authorName]: []
-//     }));
-//   } finally {
-//     setLoading(prev => ({ ...prev, [authorName]: false }));
-//   }
-// };
-
+  // Keep the original ArXiv fetching functionality
 const fetchArxivPublications = async (authorName) => {
   try {
     setLoading(prev => ({ ...prev, [authorName]: true }));
     
     const baseUrl = 'https://export.arxiv.org/api/query';
+    // Special case for Tarun Sharma - only search in hep-th
+// Special cases for specific faculty members
     let query;
     if (authorName === 'Sharma_Tarun') {
       query = `search_query=au:${authorName}+AND+cat:hep-th&sortBy=submittedDate&sortOrder=descending&max_results=20`;
@@ -104,10 +54,7 @@ const fetchArxivPublications = async (authorName) => {
     } else {
       query = `search_query=au:${authorName}&sortBy=submittedDate&sortOrder=descending&max_results=20`;
     }
-    
-    // Use CORS proxy to avoid CORS issues
-    const corsProxy = 'https://corsproxy.io/?';
-    const response = await fetch(`${corsProxy}${encodeURIComponent(`${baseUrl}?${query}`)}`);
+    const response = await fetch(`${baseUrl}?${query}`);
     const text = await response.text();
     
     const parser = new DOMParser();
@@ -143,6 +90,8 @@ const fetchArxivPublications = async (authorName) => {
     setLoading(prev => ({ ...prev, [authorName]: false }));
   }
 };
+
+
 
   useEffect(() => {
     if (expandedFaculty !== null && !publications[faculty[expandedFaculty].arxivName]) {
