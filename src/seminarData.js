@@ -1,4 +1,22 @@
 export const seminarData = [
+                {
+            title: "Charm susceptibilities as a probe of deconfinement from lattice QCD",
+            speaker: "Joydeep Chakravarty",
+            date: "2026-02-05",
+            area: "McGill University"
+          },  
+        {
+            title: "Charm susceptibilities as a probe of deconfinement from lattice QCD",
+            speaker: "Prachi Garella",
+            date: "2026-01-15",
+            area: "University of Houston"
+          },  
+        {
+            title: "On 'Noise-Friendly' Quantum Systems",
+            speaker: "Bhavay Tyagi",
+            date: "2026-01-13",
+            area: "University of Houston"
+          },  
         {
             title: "Charm susceptibilities as a probe of deconfinement from lattice QCD",
             speaker: "Shipaz Sharma",
