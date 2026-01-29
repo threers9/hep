@@ -90,16 +90,17 @@ const fetchArxivPublications = async (authorName) => {
   }
 };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (expandedFaculty !== null && !publications[faculty[expandedFaculty].arxivName]) {
       fetchArxivPublications(faculty[expandedFaculty].arxivName);
     }
   }, [expandedFaculty]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
 
 // Add this useEffect at the component level (alongside other useEffects)
-// eslint-disable-next-line react-hooks/exhaustive-deps
+/* eslint-disable react-hooks/exhaustive-deps */
 useEffect(() => {
   const fetchAllPublications = async () => {
     // Fetch publications for all faculty members when component mounts
@@ -112,6 +113,7 @@ useEffect(() => {
 
   fetchAllPublications();
 }, []); // Empty dependency array means this runs once when component mounts
+/* eslint-enable react-hooks/exhaustive-deps */
 
 
   const renderOverview = () => (
